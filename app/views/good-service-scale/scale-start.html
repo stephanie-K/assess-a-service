@@ -7,7 +7,11 @@
 
 {% block content %}
 <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-5"><span class="tag-green">Under construction</span></div>
-
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Using the Good service scale</h1>
@@ -20,7 +24,7 @@
       <h2 class="govuk-heading-m">What are the principles?</h2>
       <p>The <a href="https://good.services/the-good-services-scale" target="_blank" rel="noopener">Good service scale</a> has 15 principles.</p>
       <p>The Good Service Scale will help you and your team understand how well your service is performing for your users, where it needs to be improved, and build a clear a plan to improve it.</p>
-      <p><strong>Learn about it on Lou's website. They offer the tool in various formats.</strong></p>
+      <p><strong>Learn about it on <a href="https://good.services" target="_blank" rel="noopener">Lou's website</a>. They offer the tool in various formats.</strong></p>
       <ol class="govuk-list govuk-list--number govuk-!-margin-top-7">
         <li>Be easy to find</li>
         <li>Clearly explain the purpose of your service</li>
@@ -38,6 +42,10 @@
         <li>Clearly explain why a decision has been made</li>
         <li>Make it easy to get human assistance</li>
       </ol>
+      <div class="explanation">
+        <p>Under construction</p>
+        <p>Will explain the tool and create pages to score each principle and get the final score and recommendations</p>
+      </div>
     </div>
   </div> 
 
