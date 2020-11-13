@@ -1,0 +1,1041 @@
+
+{% extends "layout_aas.html" %}
+
+{% block pageTitle %}
+  Physical harm - Ethics assessment by Spotify - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">Physical harm</h1>
+
+      <p>There 10 potential effects:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Accidents due to distraction</li>
+        <li>Death</li>
+        <li>Exploitation of workers</li>
+        <li>Exposure of personal data</li>
+        <li>Financial insecurity</li>
+        <li>Inactivity</li>
+        <li>Muscle strain or other injuries</li>
+        <li>Neglect of basic self-care</li>
+        <li>Sleep deprivation</li>
+        <li>Violence</li>
+      </ul>
+      <div class="explanation">
+      <p>For each one on this page, if relevant to you, then write an example and select a number (1-5) for the Chance of effect and the Level of concern.</p>
+      <p>If not relevant, just move to the next one.</p>
+      </div>
+
+      <form class="form" method="post">
+      
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Accidents due to distraction</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-distraction",
+          id: "spot-distraction",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-distraction']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-distraction",
+          name: "chance-distraction",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-distraction",
+          name: "level-distraction",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+        <h2 class="govuk-heading-l">Death</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-death",
+          id: "spot-death",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-death']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-death",
+          name: "chance-death",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-death",
+          name: "level-death",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+
+        <h2 class="govuk-heading-l">Exploitation of workers</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-exploitation",
+          id: "spot-exploitation",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-exploitation']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-exploitation",
+          name: "chance-exploitation",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-exploitation",
+          name: "level-exploitation",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+        <h2 class="govuk-heading-l">Exposure of personal data</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-data",
+          id: "spot-data",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-data']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-data",
+          name: "chance-data",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-data",
+          name: "level-data",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+        <h2 class="govuk-heading-l">Financial insecurity</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-financial",
+          id: "spot-financial",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-financial']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-financial",
+          name: "chance-financial",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-financial",
+          name: "level-financial",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+        <h2 class="govuk-heading-l">Inactivity</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-inactivity",
+          id: "spot-inactivity",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-inactivity']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-inactivity",
+          name: "chance-inactivity",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-inactivity",
+          name: "level-inactivity",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+        <h2 class="govuk-heading-l">Muscle strain or other injuries</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-injury",
+          id: "spot-injury",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-injury']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-injury",
+          name: "chance-injury",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-injury",
+          name: "level-injury",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+        <h2 class="govuk-heading-l">Neglect of basic self-care</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-selfcare",
+          id: "spot-selfcare",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-selfcare']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-selfcare",
+          name: "chance-selfcare",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-selfcare",
+          name: "level-selfcare",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+        <h2 class="govuk-heading-l">Sleep deprivation</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-sleep",
+          id: "spot-sleep",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-sleep']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-sleep",
+          name: "chance-sleep",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-sleep",
+          name: "level-sleep",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+        <h2 class="govuk-heading-l">Violence</h2>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukTextarea({
+          name: "spot-violence",
+          id: "spot-violence",
+          label: {
+            text: "Example of how you might encourage or cause this",
+            classes: "govuk-label--m",
+            value: data ['spot-']
+          },
+          hint: {
+            text: "Leave empty if not relevant to you."
+          }
+        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "chance-violence",
+          name: "chance-violence",
+          label: {
+            text: "Chance of effect",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Highly improbable"
+            },
+            {
+              value: "2",
+              text: "2: Improbable"
+            },
+            {
+              value: "3",
+              text: "3: Possible"
+            },
+            {
+              value: "4",
+              text: "4: Probable"
+            },
+            {
+              value: "5",
+              text: "5: Highly probable"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "level-violence",
+          name: "level-violence",
+          label: {
+            text: "Level of concern",
+            classes: "govuk-!-font-weight-bold"
+          },
+          items: [
+            {
+              value: "Select",
+              text: "Select",
+              selected: true
+            },
+            {
+              value: "1",
+              text: "1: Least concern"
+            },
+            {
+              value: "2",
+              text: "2: Little concern"
+            },
+            {
+              value: "3",
+              text: "3: Concerned"
+            },
+            {
+              value: "4",
+              text: "4: Very concerned"
+            },
+            {
+              value: "5",
+              text: "5: Greatest concern"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See the scale for chance of effect
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {% include "../includes/chance-of-effect-scale.html"  %}
+          </div>
+        </details>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      {% endblock %}
+
+      </form>
+
+    </div>
+  </div> 
+
+

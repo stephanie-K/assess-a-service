@@ -1,0 +1,61 @@
+
+{% extends "layout_aas.html" %}
+
+{% block pageTitle %}
+  Start - Ethics assessment by Spotify - Assess a service
+{% endblock %}
+
+{% block content %}
+<div class="govuk-!-margin-bottom-9 govuk-!-margin-top-5"><span class="tag-green">Under construction</span></div>
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">Using the Ethics assessment</h1>
+
+      {{ govukWarningText({
+        text: "This is a personal project based on the worksheet from Spotify.Design",
+        iconFallbackText: "Warning"
+      }) }}
+      
+      <h2 class="govuk-heading-l">Why should you do an Ethics assessment?</h2>
+      <p>The <a href="https://spotify.design/article/investigating-consequences-with-our-ethics-assessment" target="_blank" rel="noopener">Spotify.Design worksheet</a> aims to help you evaluate your products or services for any potential harms and prioritise the next steps.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>helps you anticipate potential intended and unintended consequences</li>
+        <li>created from the user's perspective as they are the ones potentially impacted</li>
+        <li>tool to start a conversation and investigation, not and 'end-all' approach</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">How it works</h2>
+      <h3 class="govuk-heading-m">List of potential negative effects</h3>
+      <p>They are broken down into 3 categories of potential harms: <strong>physical, emotional and societal</strong></p>
+
+      <h3 class="govuk-heading-m">Examples of how you might encourage or cause this effect</h3>
+      <p>For each effect, you will list examples you might think of.</p>
+      <p>Look beyond the user you're designing for: it could impact those who don’t use your product or service as well</p>
+
+      <h3 class="govuk-heading-m">Chance of effect - Scale from 1 to 5</h3>
+      <p>A 5-point scale describes the degree of confidence your team has that your product or service produces a certain effect.</p>
+      {% include "../includes/chance-of-effect-scale.html"  %}
+
+      <h3 class="govuk-heading-m">Level of concern - Scale from 1 to 5</h3>
+      <p>A 5-point scale describes the level of concern your team has about this particular harm, where 5 = Greatest concern and 1 = Least concern.</p> 
+      <br>
+      <p>Don’t worry about getting it perfect.</p>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Start now",
+        href: "spotify-warmup",
+        isStartButton: true
+      }) }}
+      {% endblock %}
+    
+    </div>
+  </div> 
+
