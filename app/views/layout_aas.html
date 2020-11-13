@@ -10,6 +10,8 @@
 
   {% for stylesheetUrl in extensionConfig.stylesheets %}
     <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
   {% endfor %}
 {% endblock %}
 
@@ -50,7 +52,8 @@
           </ul>
           <br>
           <p>This is a prototype and just a personal project.</p>
-          <p class="govuk-!-margin-bottom-9 ">You can find the <a class="govuk-footer__link" href="https://github.com/stephanie-K/assess-a-service" target="_blank" rel="noopener">code for the website in this Github Repository</a>. Stéphanie Krus.</p>
+          <p>You can find the <a class="govuk-footer__link" href="https://github.com/stephanie-K/assess-a-service" target="_blank" rel="noopener">code for the website in this Github Repository</a>.</p>
+          <p class="govuk-!-margin-bottom-9 ">By Stéphanie Krus.</p>
         </div>
       </div>
     </div>

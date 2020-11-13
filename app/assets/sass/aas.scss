@@ -40,7 +40,7 @@ $aas-text: #1a1a1a;
         padding: 0.2em 0.8em;
         margin: 0.5em 0;
         font-weight: 600;
-        font-family: "Arial", "Helvetica", sans-serif;
+        font-family: 'Nunito', 'Arial', sans-serif;
         @media only screen and (max-width: 395px) {
             font-size:1.5em;
         }
@@ -58,6 +58,7 @@ $aas-text: #1a1a1a;
     border-top: solid 0.3em #4f8f00;
     p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
         color:  #ffffff;
+        font-size: 1em;
     }
 }
 
@@ -89,12 +90,7 @@ body p, ul, li , a, span, .govuk-link, .govuk-hint,
 .govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
 .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
     color: $aas-text;
-    font-family: "Arial", "Helvetica", sans-serif;
-}
-
-body p, ul, li , a, span, .govuk-link, .govuk-list,
-.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
-    font-size: 1em; //16px;
+    font-family: 'Nunito', 'Arial', sans-serif;
 }
 
 .tag-green {
@@ -102,3 +98,21 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
     padding: 0.5em;
     color: #ffffff;
   }
+
+  
+li {
+      margin: 0.8em auto;
+}
+
+.explanation {
+    border: solid 3px $aas-green;
+    background-color: #e3f5ce;
+    margin: 1em 0;
+    padding: 1.5em 1em;
+    border-radius: 10px;
+    color: $aas-text ; 
+    p, h3, li, span, a {
+        color: $aas-text ;
+        font-weight: 600;
+    }
+}

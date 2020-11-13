@@ -1,0 +1,42 @@
+
+{% extends "layout_aas.html" %}
+
+{% block pageTitle %}
+  Start - GOVUK Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+<div class="govuk-!-margin-bottom-9 govuk-!-margin-top-5"><span class="tag-green">Under construction</span></div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Using the GOV.UK Service standard</h1>
+
+      {{ govukWarningText({
+        text: "This is a personal project not a real tool from GOV.UK",
+        iconFallbackText: "Warning"
+      }) }}
+      
+      <h2 class="govuk-heading-m">What are the principles?</h2>
+      <p>The new <a href="https://www.gov.uk/service-manual/service-standard" target="_blank" rel="noopener">Service standard</a> has 14 points.</p>
+      <p>The Service Standard helps teams to create and run great public services.</p>
+      <ol class="govuk-list govuk-list--number govuk-!-margin-top-7">
+        <li>Understand users and their needs</li>
+        <li>Solve a whole problem for users</li>
+        <li>Provide a joined up experience across all channels</li>
+        <li>Make the service simple to use</li>
+        <li>Make sure everyone can use the service</li>
+        <li>Have a multidisciplinary team</li>
+        <li>Use agile ways of working</li>
+        <li>Iterate and improve frequently</li>
+        <li>Create a secure service which protects users’ privacy</li>
+        <li>Define what success looks like and publish performance data</li>
+        <li>Choose the right tools and technology</li>
+        <li>Make new source code open</li>
+        <li>Use and contribute to open standards, common components and patterns</li>
+        <li>Operate a reliable service</li>
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}
