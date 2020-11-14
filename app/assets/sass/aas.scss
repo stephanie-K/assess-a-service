@@ -101,7 +101,10 @@ body p, ul, li , a, span, .govuk-link, .govuk-hint,
     color: #ffffff;
   }
 
-  
+.govuk-list--bullet{
+    margin-left: 1em;
+}
+
 li {
       margin: 0.8em auto;
 }
@@ -169,3 +172,30 @@ li {
 .govuk-details__summary {
     color: $aas-green
 }
+
+.ready-tag {
+    background: #cce2d8;
+    color: #005a30;
+    font-size: 0.9em;
+    margin-left: 0.5em;
+    padding: 0.2em 1em;
+  }
+  .started-tag {
+    color: #594d00;
+    font-size: 0.9em;
+    background: #fff7bf;
+    margin-left: 0.5em;
+    padding: 0.2em 1em;
+  }
+  
+  .todo-tag {
+    color: #942514;
+    font-size: 0.9em;
+    background: #f6d7d2;
+    margin-left: 0.5em;
+    padding: 0.2em 1em;
+  }
+
+  img {
+      max-width: 100%;
+  }
