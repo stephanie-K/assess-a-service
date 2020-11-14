@@ -41,10 +41,22 @@
         <li>Ensure sponsor acceptance</li>
       </ol>
 
-      <div class="explanation">
+      <div class="explanation govuk-!-margin-bottom-9">
         <p>Under construction</p>
-        <p>Will explain each point and maybe add an option to assess it and have a final page with list of actions?</p>
+        <p>For each point, you will:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>learn why it's importnant</li>
+          <li>assess how well you are doing</li>
+        </ul>
+        <p>The final summary will show what you need to improve.</p>
       </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Start now",
+        href: "gov-scot-point1",
+        isStartButton: true
+      }) }} 
 
     </div>
   </div>

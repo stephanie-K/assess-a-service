@@ -54,4 +54,25 @@
       
 
 
-              
+          <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-">
+                Are you doing it?
+                </label>
+                <select class="govuk-select" id="sg-point1-" name="sg-point1-">
+                <option value="default" {% if data ['sg-point1-'] === 'default' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['sg-point1-'] === '1' %} selected="true" {% endif %}>Yes</option>
+                <option value="2" {% if data ['sg-point1-'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+                <option value="3" {% if data ['sg-point1-'] === '3' %} selected="true" {% endif %}>Not yet</option>
+                <option value="0" {% if data ['sg-point1-'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+                </select>
+            </div>
+
+
+
+            {% if data['sg-point1-'] in ["1", "2", "3"] %}
+            <p>:
+              {% if data['sg-point1-'] === "1" %}<span class="ready-tag">Doing it</span>{% endif%}
+              {% if data['sg-point1-'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+              {% if data['sg-point1-'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+            </p>
+            {% endif%}

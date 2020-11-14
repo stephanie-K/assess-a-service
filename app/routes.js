@@ -21,3 +21,13 @@ router.post('/spotify/spotify-societal', function (req, res) {
   router.post('/spotify/spotify-summary', function (req, res) {
     res.redirect('/spotify/spotify-end')
   })
+
+
+  router.post('/gov-scot/gov-scot-point1', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point2')
+  })
+
+  router.post('/gov-scot/gov-scot-point2', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-summary')
+  })
+

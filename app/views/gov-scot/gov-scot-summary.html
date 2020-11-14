@@ -1,0 +1,162 @@
+
+{% extends "layout_aas.html" %}
+
+{% block pageTitle %}
+  Summary - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">Summary</h1>
+
+      <div class="explanation govuk-!-margin-bottom-9">
+          <p>If you skipped an item or selected 'Not relevant to us', it won't appear in this summary.</p>
+          <p>This might change in a future version, I might make each item mandatory?</p>
+      </div>
+
+      <h2 class="govuk-heading-l">1. Understanding users and their needs</h2>
+      {% if data['sg-point1-research-done-before'] in ["1", "2", "3"] %}
+      <p>Understand what research has already been done: 
+        {% if data['sg-point1-research-done-before'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point1-research-done-before'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point1-research-done-before'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+        </p>
+        {% endif %}
+        {% if data['sg-point1-data'] in ["1", "2", "3"] %}
+      <p>Make sure data guides your decisions:
+        {% if data['sg-point1-data'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point1-data'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point1-data'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif %}
+      {% if data['sg-point1-wide'] in ["1", "2", "3"] %}
+      <p>Do research with a wide range of people:
+        {% if data['sg-point1-wide'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point1-wide'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point1-wide'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif %}
+      {% if data['sg-point1-inclusive'] in ["1", "2", "3"] %}
+      <p>Be ethical and inclusive:
+        {% if data['sg-point1-inclusive'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point1-inclusive'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point1-inclusive'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif %}
+      {% if data['sg-point1-legally'] in ["1", "2", "3"] %}
+      <p>Do research legally:
+        {% if data['sg-point1-legally'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point1-legally'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point1-legally'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif %}
+      {% if data['sg-point1-evidence'] in ["1", "2", "3"] %}
+      <p>Make sure what you deliver is based on evidence:
+        {% if data['sg-point1-evidence'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point1-evidence'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point1-evidence'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif %}
+      {% if data['sg-point1-test'] in ["1", "2", "3"] %}
+      <p>Test and learn as early as possible:
+        {% if data['sg-point1-test'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point1-test'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point1-test'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif %}
+      {% if data['sg-point1-share'] in ["1", "2", "3"] %}
+      <p>Share your insights:
+        {% if data['sg-point1-share'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point1-share'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point1-share'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif%}
+
+
+      <h2 class="govuk-heading-l">2. Solve a whole problem for users</h2>
+      {% if data['sg-point2-map'] in ["1", "2", "3"] %}
+      <p>Map the landscape:
+        {% if data['sg-point2-map'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point2-map'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point2-map'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif%}
+      {% if data['sg-point2-scope'] in ["1", "2", "3"] %}
+      <p>Define your scope:
+        {% if data['sg-point2-scope'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point2-scope'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point2-scope'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif%}
+      {% if data['sg-point2-constraints'] in ["1", "2", "3"] %}
+      <p>Understand constraints:
+        {% if data['sg-point2-constraints'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point2-constraints'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point2-constraints'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif%}
+      {% if data['sg-point2-barriers'] in ["1", "2", "3"] %}
+      <p>Remove barriers that will affect the service:
+        {% if data['sg-point2-barriers'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point2-barriers'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point2-barriers'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif%}
+      {% if data['sg-point2-others'] in ["1", "2", "3"] %}
+      <p>Work with other organisations:
+        {% if data['sg-point2-others'] === "1" %}<span class="ready-tag">Aye</span>{% endif%}
+        {% if data['sg-point2-others'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+        {% if data['sg-point2-others'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+      </p>
+      {% endif%}
+
+      <h2 class="govuk-heading-l">3. Design and deliver a joined-up experience</h2>
+
+
+      <h2 class="govuk-heading-l">4. Help users succeed first time</h2>
+
+
+      <h2 class="govuk-heading-l">5. Make sure everyone can use the service</h2>
+
+
+      <h2 class="govuk-heading-l">6. Have a multidisciplinary team</h2>
+
+
+      <h2 class="govuk-heading-l">7. Iterate and improve frequently</h2>
+
+
+      <h2 class="govuk-heading-l">8. Create a secure service which protects users’ privacy</h2>
+    
+
+      <h2 class="govuk-heading-l">9. Define what success looks like and publish performance data</h2>
+
+
+      <h2 class="govuk-heading-l">10. Choose the right tools and technology</h2>
+
+
+      <h2 class="govuk-heading-l">11. Make new source code open</h2>
+
+
+      <h2 class="govuk-heading-l">12. Use and contribute to shared digital practices, processes, components, standards, patterns and platforms</h2>
+ 
+
+      <h2 class="govuk-heading-l">13. Operate a reliable service</h2>
+ 
+
+      <h2 class="govuk-heading-l">14. Ensure sponsor acceptance</h2>
+
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Not ready - button do not work"
+      }) }}
+    </div>
+  </div> 
+{% endblock %}
