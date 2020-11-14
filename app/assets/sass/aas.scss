@@ -16,6 +16,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 @import "application";
 $aas-green: #4f8f00;
 $aas-text: #1a1a1a;
+$aas-link: #376400;
 
 //---------------------------------------- HEADER ------------------------------------------------//
 
@@ -115,4 +116,21 @@ li {
         color: $aas-text ;
         font-weight: 600;
     }
+}
+
+.govuk-link, a, .govuk-link:link, a:link,
+.govuk-link:visited, a:visited, .govuk-link:active, a:active{
+    color: $aas-link
+}
+
+.govuk-link:focus, a:focus{
+    outline: 2px solid $aas-green;
+}
+
+.govuk-link:hover, a:hover{
+    color: $aas-text;
+}
+
+.govuk-details__summary {
+    color: $aas-green
 }

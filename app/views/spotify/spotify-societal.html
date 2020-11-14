@@ -1,0 +1,44 @@
+
+{% extends "layout_aas.html" %}
+
+{% block pageTitle %}
+  Societal harm - Ethics assessment by Spotify - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">Societal harm</h1>
+
+      <p>There 7 potential effects:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Exclusion of a group of people</li>
+        <li>Harm to the environment</li>
+        <li>Over or under-representation</li>
+        <li>Political polarisation</li>
+        <li>Reinforcing stereotypes</li>
+        <li>Unequal opportunity</li>
+        <li>Unequal quality of service</li>
+      </ul>
+      <div class="explanation">
+      <p>For each one on this page, if relevant to you, then write an example and select a number (1-5) for the Chance of effect and the Level of concern.</p>
+      <p>If not relevant, just move to the next one.</p>
+      </div>
+
+      <form class="form" method="post">
+      
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Coming soon</h2>
+        <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-5"><span class="tag-green">Under construction</span></div>
+
+  
+        </form>
+  
+      </div>
+    </div> 
+    {% endblock %}

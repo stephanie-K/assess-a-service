@@ -136,7 +136,6 @@
         </details>
 
         <h2 class="govuk-heading-l">Death</h2>
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
         {{ govukTextarea({
           name: "spot-death",
           id: "spot-death",
@@ -149,7 +148,6 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         {{ govukSelect({
           id: "chance-death",
@@ -236,7 +234,6 @@
 
 
         <h2 class="govuk-heading-l">Exploitation of workers</h2>
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
         {{ govukTextarea({
           name: "spot-exploitation",
           id: "spot-exploitation",
@@ -249,7 +246,6 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         {{ govukSelect({
           id: "chance-exploitation",
@@ -335,7 +331,6 @@
         </details>
 
         <h2 class="govuk-heading-l">Exposure of personal data</h2>
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
         {{ govukTextarea({
           name: "spot-data",
           id: "spot-data",
@@ -348,7 +343,6 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         {{ govukSelect({
           id: "chance-data",
@@ -434,7 +428,6 @@
         </details>
 
         <h2 class="govuk-heading-l">Financial insecurity</h2>
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
         {{ govukTextarea({
           name: "spot-financial",
           id: "spot-financial",
@@ -447,7 +440,6 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         {{ govukSelect({
           id: "chance-financial",
@@ -533,7 +525,7 @@
         </details>
 
         <h2 class="govuk-heading-l">Inactivity</h2>
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
         {{ govukTextarea({
           name: "spot-inactivity",
           id: "spot-inactivity",
@@ -546,7 +538,7 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
+      
 
         {{ govukSelect({
           id: "chance-inactivity",
@@ -632,7 +624,7 @@
         </details>
 
         <h2 class="govuk-heading-l">Muscle strain or other injuries</h2>
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      
         {{ govukTextarea({
           name: "spot-injury",
           id: "spot-injury",
@@ -645,7 +637,7 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
 
         {{ govukSelect({
           id: "chance-injury",
@@ -731,7 +723,6 @@
         </details>
 
         <h2 class="govuk-heading-l">Neglect of basic self-care</h2>
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
         {{ govukTextarea({
           name: "spot-selfcare",
           id: "spot-selfcare",
@@ -744,7 +735,6 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         {{ govukSelect({
           id: "chance-selfcare",
@@ -830,7 +820,6 @@
         </details>
 
         <h2 class="govuk-heading-l">Sleep deprivation</h2>
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
         {{ govukTextarea({
           name: "spot-sleep",
           id: "spot-sleep",
@@ -843,7 +832,6 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         {{ govukSelect({
           id: "chance-sleep",
@@ -929,7 +917,6 @@
         </details>
 
         <h2 class="govuk-heading-l">Violence</h2>
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
         {{ govukTextarea({
           name: "spot-violence",
           id: "spot-violence",
@@ -942,7 +929,6 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         {{ govukSelect({
           id: "chance-violence",
