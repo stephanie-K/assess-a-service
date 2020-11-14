@@ -17,3 +17,7 @@ router.post('/spotify/spotify-emotional', function (req, res) {
 router.post('/spotify/spotify-societal', function (req, res) {
     res.redirect('/spotify/spotify-next-steps')
   })
+
+  router.post('/spotify/spotify-summary', function (req, res) {
+    res.redirect('/spotify/spotify-end')
+  })

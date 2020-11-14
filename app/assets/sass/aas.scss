@@ -17,6 +17,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 $aas-green: #4f8f00;
 $aas-text: #1a1a1a;
 $aas-link: #376400;
+$aas-warning: #B30000;
 
 //---------------------------------------- HEADER ------------------------------------------------//
 
@@ -117,6 +118,40 @@ li {
         font-weight: 600;
     }
 }
+
+.warning {
+    border: solid 3px $aas-warning;
+    background-color: #E6C8C8;
+    margin: 1em 0;
+    padding: 1.5em 1em;
+    border-radius: 1.5em;
+    color: $aas-text ; 
+    p, li, span, a {
+        color: $aas-text ;
+        font-weight: 600;
+    }
+    h3, h2 {
+        color: $aas-warning ;
+        font-weight: 700;
+    }
+}
+
+.notes {
+    // border: solid 3px #000000;
+    background-color: #ededed;
+    margin: 1em 0;
+    padding: 1.5em 1em;
+    //border-radius: 1.5em;
+    //color: $aas-text ; 
+    p, li, span, a , h3, h2{
+        color: #595959 ;
+        font-weight: 600;
+    }
+    h3, h2 {
+        font-weight: 700;
+    }
+}
+
 
 .govuk-link, a, .govuk-link:link, a:link,
 .govuk-link:visited, a:visited, .govuk-link:active, a:active{

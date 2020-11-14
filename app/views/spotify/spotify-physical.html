@@ -30,7 +30,7 @@
         <li>Violence</li>
       </ul>
       <div class="explanation">
-      <p>For each one on this page, if relevant to you, then write an example and select a number (1-5) for the Chance of effect and the Level of concern.</p>
+      <p>For each one on this page, if relevant to you, then write an example and select a number (1-5) for the Risk of effect.</p>
       <p>If not relevant, just move to the next one.</p>
       </div>
 
@@ -50,88 +50,30 @@
             text: "Leave empty if not relevant to you."
           }
         }) }}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
-        {{ govukSelect({
-          id: "chance-distraction",
-          name: "chance-distraction",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-distraction",
-          name: "level-distraction",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
-
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-distraction">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-distraction" name="risk-distraction">
+            <option value="0" {% if data ['risk-distraction'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-distraction'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-distraction'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-distraction'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-distraction'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-distraction'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+            
+          </select>
+        </div>
+      
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -149,86 +91,28 @@
           }
         }) }}
 
-        {{ govukSelect({
-          id: "chance-death",
-          name: "chance-death",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-death",
-          name: "level-death",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-death">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-death" name="risk-death">
+            <option value="0" {% if data ['risk-death'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-death'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-death'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-death'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-death'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-death'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+          </select>
+        </div>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -247,86 +131,28 @@
           }
         }) }}
 
-        {{ govukSelect({
-          id: "chance-exploitation",
-          name: "chance-exploitation",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-exploitation",
-          name: "level-exploitation",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-exploitation">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-exploitation" name="risk-exploitation">
+            <option value="0" {% if data ['risk-exploitation'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-exploitation'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-exploitation'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-exploitation'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-exploitation'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-exploitation'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+          </select>
+        </div>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -344,86 +170,28 @@
           }
         }) }}
 
-        {{ govukSelect({
-          id: "chance-data",
-          name: "chance-data",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-data",
-          name: "level-data",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-data">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-data" name="risk-data">
+            <option value="0" {% if data ['risk-data'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-data'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-data'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-data'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-data'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-data'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+          </select>
+        </div>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -441,86 +209,28 @@
           }
         }) }}
 
-        {{ govukSelect({
-          id: "chance-financial",
-          name: "chance-financial",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-financial",
-          name: "level-financial",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-financial">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-financial" name="risk-financial">
+            <option value="0" {% if data ['risk-financial'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-financial'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-financial'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-financial'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-financial'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-financial'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+          </select>
+        </div>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -539,87 +249,28 @@
           }
         }) }}
       
-
-        {{ govukSelect({
-          id: "chance-inactivity",
-          name: "chance-inactivity",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-inactivity",
-          name: "level-inactivity",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-inactivity">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-inactivity" name="risk-inactivity">
+            <option value="0" {% if data ['risk-inactivity'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-inactivity'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-inactivity'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-inactivity'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-inactivity'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-inactivity'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+          </select>
+        </div>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -638,87 +289,28 @@
           }
         }) }}
 
-
-        {{ govukSelect({
-          id: "chance-injury",
-          name: "chance-injury",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-injury",
-          name: "level-injury",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-injury">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-injury" name="risk-injury">
+            <option value="0" {% if data ['risk-injury'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-injury'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-injury'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-injury'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-injury'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-injury'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+          </select>
+        </div>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -736,86 +328,28 @@
           }
         }) }}
 
-        {{ govukSelect({
-          id: "chance-selfcare",
-          name: "chance-selfcare",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-selfcare",
-          name: "level-selfcare",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-selfcare">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-selfcare" name="risk-selfcare">
+            <option value="0" {% if data ['risk-selfcare'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-selfcare'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-selfcare'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-selfcare'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-selfcare'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-selfcare'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+          </select>
+        </div>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -833,86 +367,28 @@
           }
         }) }}
 
-        {{ govukSelect({
-          id: "chance-sleep",
-          name: "chance-sleep",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-sleep",
-          name: "level-sleep",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-sleep">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-sleep" name="risk-sleep">
+            <option value="0" {% if data ['risk-sleep'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-sleep'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-sleep'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-sleep'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-sleep'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-sleep'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+          </select>
+        </div>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -923,93 +399,35 @@
           label: {
             text: "Example of how you might encourage or cause this",
             classes: "govuk-label--m",
-            value: data ['spot-']
+            value: data ['spot-violence']
           },
           hint: {
             text: "Leave empty if not relevant to you."
           }
         }) }}
 
-        {{ govukSelect({
-          id: "chance-violence",
-          name: "chance-violence",
-          label: {
-            text: "Chance of effect",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Highly improbable"
-            },
-            {
-              value: "2",
-              text: "2: Improbable"
-            },
-            {
-              value: "3",
-              text: "3: Possible"
-            },
-            {
-              value: "4",
-              text: "4: Probable"
-            },
-            {
-              value: "5",
-              text: "5: Highly probable"
-            }
-          ]
-        }) }}
-
-        {{ govukSelect({
-          id: "level-violence",
-          name: "level-violence",
-          label: {
-            text: "Level of concern",
-            classes: "govuk-!-font-weight-bold"
-          },
-          items: [
-            {
-              value: "Select",
-              text: "Select",
-              selected: true
-            },
-            {
-              value: "1",
-              text: "1: Least concern"
-            },
-            {
-              value: "2",
-              text: "2: Little concern"
-            },
-            {
-              value: "3",
-              text: "3: Concerned"
-            },
-            {
-              value: "4",
-              text: "4: Very concerned"
-            },
-            {
-              value: "5",
-              text: "5: Greatest concern"
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="risk-violence">
+            Risk of effect
+          </label>
+          <select class="govuk-select" id="risk-violence" name="risk-violence">
+            <option value="0" {% if data ['risk-violence'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-violence'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-violence'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-violence'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-violence'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-violence'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+          </select>
+        </div>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              See the scale for chance of effect
+              See the scale for risk of effect
             </span>
           </summary>
           <div class="govuk-details__text">
-            {% include "../includes/chance-of-effect-scale.html"  %}
+            {% include "../includes/risk-of-effect-scale.html"  %}
           </div>
         </details>
 
@@ -1017,11 +435,8 @@
       {{ govukButton({
         text: "Continue"
       }) }}
-      {% endblock %}
-
       </form>
-
     </div>
   </div> 
-
+{% endblock %}
 
