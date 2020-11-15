@@ -50,6 +50,9 @@ $aas-warning: #B30000;
     a {
         text-decoration: none;
     }
+    a:focus { // remove the green focus for the link in the banner only
+        outline: 2px solid #0000;
+    }
 }
 
 //---------------------------------------- FOOTER ------------------------------------------------//
@@ -110,45 +113,39 @@ li {
 }
 
 .explanation {
-    border: solid 3px $aas-green;
+    border-left: 10px solid $aas-green;
     background-color: #e3f5ce;
+/* 
+    border: solid 3px $aas-green;
     margin: 1em 0;
     padding: 1.5em 1em;
     border-radius: 1.5em;
-    color: $aas-text ; 
     p, h3, li, span, a {
-        color: $aas-text ;
         font-weight: 600;
     }
+*/
 }
 
-.warning {
+.govuk-inset-text.warning {
+    border-left: 10px solid $aas-warning;
+    background-color: #f1e3e3;
+/* 
     border: solid 3px $aas-warning;
-    background-color: #E6C8C8;
     margin: 1em 0;
     padding: 1.5em 1em;
     border-radius: 1.5em;
-    color: $aas-text ; 
-    p, li, span, a {
-        color: $aas-text ;
-        font-weight: 600;
-    }
+*/
     h3, h2 {
         color: $aas-warning ;
         font-weight: 700;
     }
 }
 
-.notes {
-    // border: solid 3px #000000;
+.govuk-inset-text.notes {
+    border-left: 10px solid #939393;
     background-color: #ededed;
-    margin: 1em 0;
-    padding: 1.5em 1em;
-    //border-radius: 1.5em;
-    //color: $aas-text ; 
     p, li, span, a , h3, h2{
         color: #595959 ;
-        font-weight: 600;
     }
     h3, h2 {
         font-weight: 700;
@@ -173,32 +170,31 @@ li {
     color: $aas-green
 }
 
-.ready-tag {
-    background: #cce2d8;
-    color: #005a30;
-    font-size: 0.9em;
-    font-weight: 600;
-    margin-left: 0.5em;
-    padding: 0.2em 1em;
-  }
-  .started-tag {
-    color: #594d00;
-    font-size: 0.9em;
-    font-weight: 600;
-    background: #fff7bf;
-    margin-left: 0.5em;
-    padding: 0.2em 1em;
-  }
-  
-  .todo-tag {
-    color: #942514;
-    font-size: 0.9em;
-    font-weight: 600;
-    background: #f6d7d2;
-    margin-left: 0.5em;
-    padding: 0.2em 1em;
-  }
+.govuk-details__text {
+    border-left: 5px solid $aas-green; 
+}
 
-  img {
-      max-width: 100%;
-  }
+.govuk-tag {
+    //text-transform: none;
+    font-size: 0.8em;
+}
+
+.govuk-tag.govuk-tag--red {
+    color: #ffffff;
+    background-color: $aas-warning;
+}
+
+.govuk-tag.govuk-tag--green {
+    color: #ffffff;
+    background-color: $aas-green;
+}
+.govuk-tag.govuk-tag--yellow {
+    color: $aas-text;
+    background-color: #fd0;
+}
+
+
+
+img {
+    max-width: 100%;
+}
