@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-!-margin-bottom-9 govuk-!-margin-top-5"><strong class="govuk-tag govuk-tag--red govuk-!-font-size-24">Under construction</strong></div>
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
   text: "Back",
@@ -42,7 +41,6 @@
       </ol>
 
       <div class="govuk-inset-text explanation  govuk-!-margin-bottom-9">
-        <p>Under construction</p>
         <p>For each point, you will:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>learn why it's importnant</li>
@@ -50,14 +48,13 @@
         </ul>
         <p>The final summary will show what you need to improve.</p>
       </div>
-
+      <form class="form" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
         text: "Start now",
-        href: "gov-scot-point1",
         isStartButton: true
       }) }} 
-
+      </form>
     </div>
   </div>
 

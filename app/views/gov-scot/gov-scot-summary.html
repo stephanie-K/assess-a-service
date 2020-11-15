@@ -107,7 +107,7 @@
           {% endif %}
         </tbody>
       </table>
-
+      <p><a href="gov-scot-point1">Change your answers to point 1</a> (will take you back here after)</p>
 
       <h2 class="govuk-heading-l">2. Solve a whole problem for users</h2>
       <table class="govuk-table">
@@ -164,7 +164,7 @@
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point2">Change your answers to point 2</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">3. Design and deliver a joined-up experience</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
@@ -200,7 +200,7 @@
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point3">Change your answers to point 3</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">4. Help users succeed first time</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
@@ -236,7 +236,7 @@
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point4">Change your answers to point 4</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">5. Make sure everyone can use the service</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
@@ -322,7 +322,7 @@
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point5">Change your answers to point 5</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">6. Have a multidisciplinary team</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
@@ -388,139 +388,480 @@
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point6">Change your answers to point 6</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">7. Iterate and improve frequently</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
-            {% if data['sg-point-'] in ["1", "2", "3"] %}
+            {% if data['sg-point7-real'] in ["1", "2", "3"] %}
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">Get your service in front of real users as soon as possible</td>
                 <td class="govuk-table__cell">
-                    {% if data['sg-point-'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
-                    {% if data['sg-point-'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
-                    {% if data['sg-point-'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                    {% if data['sg-point7-real'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point7-real'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point7-real'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point7-continuous'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Plan for continuous improvement</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point7-continuous'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point7-continuous'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point7-continuous'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point7-priority'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Prioritise improvements</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point7-priority'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point7-priority'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point7-priority'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point7-delivery'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Build using continuous delivery techniques</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point7-delivery'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point7-delivery'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point7-delivery'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
                 </td>
             </tr>
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point7">Change your answers to point 7</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">8. Create a secure service which protects users’ privacy</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
-            {% if data['sg-point-'] in ["1", "2", "3"] %}
+            {% if data['sg-point8-risk'] in ["1", "2", "3"] %}
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">Approach risk in a proportionate way</td>
                 <td class="govuk-table__cell">
-                    {% if data['sg-point-'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
-                    {% if data['sg-point-'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
-                    {% if data['sg-point-'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                    {% if data['sg-point8-risk'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point8-risk'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point8-risk'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point8-info'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Work with business and information risk teams</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point8-info'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point8-info'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point8-info'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point8-sustainable'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Make security sustainable</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point8-sustainable'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point8-sustainable'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point8-sustainable'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point8-protect'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Protect users’ personal information</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point8-protect'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point8-protect'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point8-protect'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point8-test'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Test your systems</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point8-test'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point8-test'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point8-test'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
                 </td>
             </tr>
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point8">Change your answers to point 8</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">9. Define what success looks like and publish performance data</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
-            {% if data['sg-point-'] in ["1", "2", "3"] %}
+            {% if data['sg-point9-map'] in ["1", "2", "3"] %}
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">Map to the national outcomes in Scotland’s National Performance Framework</td>
                 <td class="govuk-table__cell">
-                    {% if data['sg-point-'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
-                    {% if data['sg-point-'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
-                    {% if data['sg-point-'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                    {% if data['sg-point9-map'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point9-map'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point9-map'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point9-success'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Understand what success looks like for your service</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point9-success'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point9-success'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point9-success'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point9-data'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Use a wide range of data to make improvements</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point9-data'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point9-data'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point9-data'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point9-review'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Continually review the performance of the service</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point9-review'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point9-review'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point9-review'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point9-info'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Improve your management information over time</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point9-info'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point9-info'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point9-info'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point9-publish'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Publish data to help inform and improve future government services</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point9-publish'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point9-publish'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point9-publish'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
                 </td>
             </tr>
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point9">Change your answers to point 9</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">10. Choose the right tools and technology</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
-            {% if data['sg-point-'] in ["1", "2", "3"] %}
+            {% if data['sg-point10-tech'] in ["1", "2", "3"] %}
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">Understand the technologies needed to deliver the service</td>
                 <td class="govuk-table__cell">
-                    {% if data['sg-point-'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
-                    {% if data['sg-point-'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
-                    {% if data['sg-point-'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                    {% if data['sg-point10-tech'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point10-tech'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point10-tech'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point10-reuse'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Follow the principle of ‘reuse before buy before build’</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point10-reuse'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point10-reuse'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point10-reuse'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point10-cost'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Make the service cost effective</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point10-cost'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point10-cost'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point10-cost'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point10-how'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Show how decisions on technology have been made</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point10-how'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point10-how'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point10-how'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point10-flexibility'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Allow for flexibility when making technology choices</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point10-flexibility'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point10-flexibility'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point10-flexibility'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point10-sustainable'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Create a sustainable plan for procurement and contract management</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point10-sustainable'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point10-sustainable'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point10-sustainable'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point10-impact'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Consider the impact of your service on the environment</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point10-impact'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point10-impact'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point10-impact'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point10-plan'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Plan to replace legacy technology</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point10-plan'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point10-plan'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point10-plan'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
                 </td>
             </tr>
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point10">Change your answers to point 10</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">11. Make new source code open</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
-            {% if data['sg-point-'] in ["1", "2", "3"] %}
+            {% if data['sg-point11-open'] in ["1", "2", "3"] %}
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">Write code in the open from the start</td>
                 <td class="govuk-table__cell">
-                    {% if data['sg-point-'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
-                    {% if data['sg-point-'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
-                    {% if data['sg-point-'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                    {% if data['sg-point11-open'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point11-open'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point11-open'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point11-not'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Understand when you should not publish code</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point11-not'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point11-not'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point11-not'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point11-how'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Describe how you’ll do open source</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point11-how'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point11-how'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point11-how'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point11-available'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Make source code you’ve created available for reuse</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point11-available'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point11-available'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point11-available'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
                 </td>
             </tr>
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point11">Change your answers to point 11</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">12. Use and contribute to shared digital practices, processes, components, standards, patterns and platforms</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
-            {% if data['sg-point-'] in ["1", "2", "3"] %}
+            {% if data['sg-point12-reuse'] in ["1", "2", "3"] %}
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">Reuse national assets</td>
                 <td class="govuk-table__cell">
-                    {% if data['sg-point-'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
-                    {% if data['sg-point-'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
-                    {% if data['sg-point-'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                    {% if data['sg-point12-reuse'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point12-reuse'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point12-reuse'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point12-open'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Use and contribute to open standards</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point12-open'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point12-open'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point12-open'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point12-data'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Use data standards</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point12-data'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point12-data'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point12-data'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point12-plan'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Make a plan to improve the quality of your data</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point12-plan'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point12-plan'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point12-plan'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point12-available'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Make your data available for re-use</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point12-available'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point12-available'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point12-available'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point12-share'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Share your outputs for the benefit of others</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point12-share'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point12-share'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point12-share'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point12-doing'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Share what you’re doing</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point12-doing'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point12-doing'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point12-doing'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
                 </td>
             </tr>
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point12">Change your answers to point 12</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">13. Operate a reliable service</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
-            {% if data['sg-point-'] in ["1", "2", "3"] %}
+            {% if data['sg-point13-nfr'] in ["1", "2", "3"] %}
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">Define non-functional requirements</td>
                 <td class="govuk-table__cell">
-                    {% if data['sg-point-'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
-                    {% if data['sg-point-'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
-                    {% if data['sg-point-'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                    {% if data['sg-point13-nfr'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point13-nfr'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point13-nfr'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point13-qa'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Carry out quality assurance testing regularly</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point13-qa'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point13-qa'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point13-qa'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point13-test'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Test the service</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point13-test'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point13-test'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point13-test'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point13-plan'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Plan for major events</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point13-plan'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point13-plan'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point13-plan'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point13-speed'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Maximise uptime and speed of response for the online part of the service</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point13-speed'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point13-speed'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point13-speed'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point13-deploy'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Deploy software changes regularly without significant downtime</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point13-deploy'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point13-deploy'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point13-deploy'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
                 </td>
             </tr>
             {% endif%}
         </tbody>
     </table>
-
+    <p><a href="gov-scot-point13">Change your answers to point 13</a> (will take you back here after)</p>
       <h2 class="govuk-heading-l">14. Ensure sponsor acceptance</h2>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
-            {% if data['sg-point-'] in ["1", "2", "3"] %}
+            {% if data['sg-point14-include'] in ["1", "2", "3"] %}
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">Include the right people as the service develops</td>
                 <td class="govuk-table__cell">
-                    {% if data['sg-point-'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
-                    {% if data['sg-point-'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
-                    {% if data['sg-point-'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                    {% if data['sg-point14-include'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point14-include'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point14-include'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
+                </td>
+            </tr>
+            {% endif%}
+            {% if data['sg-point14-open'] in ["1", "2", "3"] %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Be open and transparent</td>
+                <td class="govuk-table__cell">
+                    {% if data['sg-point14-open'] === "1" %}<strong class="govuk-tag govuk-tag--green">Aye</strong>{% endif%}
+                    {% if data['sg-point14-open'] === "2" %}<strong class="govuk-tag govuk-tag--yellow">Need to improve</strong>{% endif%}
+                    {% if data['sg-point14-open'] === "3" %}<strong class="govuk-tag govuk-tag--red">Not doing it yet</strong>{% endif%}
                 </td>
             </tr>
             {% endif%}
         </tbody>
     </table>
-
+    <p class="govuk-!-margin-bottom-9"><a href="gov-scot-point14">Change your answers to point 14</a> (will take you back here after)</p>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Not ready - button do not work"
+        text: "Finish",
+        href: "gov-scot-end"
       }) }}
     </div>
   </div> 
