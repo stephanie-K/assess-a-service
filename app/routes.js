@@ -28,6 +28,54 @@ router.post('/spotify/spotify-societal', function (req, res) {
   })
 
   router.post('/gov-scot/gov-scot-point2', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point3')
+  })
+
+  router.post('/gov-scot/gov-scot-point3', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point4')
+  })
+
+  router.post('/gov-scot/gov-scot-point4', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point5')
+  })
+
+  router.post('/gov-scot/gov-scot-point5', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point6')
+  })
+
+  router.post('/gov-scot/gov-scot-point6', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-summary')
+  })
+
+  router.post('/gov-scot/gov-scot-point7', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point8')
+  })
+
+  router.post('/gov-scot/gov-scot-point8', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point9')
+  })
+
+  router.post('/gov-scot/gov-scot-point9', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point10')
+  })
+
+  router.post('/gov-scot/gov-scot-point10', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point11')
+  })
+
+  router.post('/gov-scot/gov-scot-point11', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point12')
+  })
+
+  router.post('/gov-scot/gov-scot-point12', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point13')
+  })
+
+  router.post('/gov-scot/gov-scot-point13', function (req, res) {
+    res.redirect('/gov-scot/gov-scot-point14')
+  })
+
+  router.post('/gov-scot/gov-scot-point14', function (req, res) {
     res.redirect('/gov-scot/gov-scot-summary')
   })
 

@@ -181,7 +181,7 @@ li {
 
 .govuk-tag.govuk-tag--red {
     color: #ffffff;
-    background-color: $aas-warning;
+    background-color: #ca3434;
 }
 
 .govuk-tag.govuk-tag--green {
@@ -190,11 +190,14 @@ li {
 }
 .govuk-tag.govuk-tag--yellow {
     color: $aas-text;
-    background-color: #fd0;
+    background-color: rgb(248, 223, 62);
 }
-
-
 
 img {
     max-width: 100%;
 }
+
+::selection {
+    color: #000000;
+    background: #ededed
+  }
