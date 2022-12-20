@@ -1,0 +1,203 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/templates/blank-unbranded
+
+// Import settings first so we can override them before importing all of GOV.UK Frontend
+// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
+@import "node_modules/govuk-frontend/govuk/settings/all";
+
+// Override the default GOV.UK Frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+@import "application";
+$aas-green: #4f8f00;
+$aas-text: #1a1a1a;
+$aas-link: #376400;
+$aas-warning: #B30000;
+
+//---------------------------------------- HEADER ------------------------------------------------//
+
+
+.govuk-header__container {
+    padding-top: 1.5em !important;
+    padding-bottom: 1.5em !important;
+}
+
+
+.govuk-header__container {
+    border-bottom: 0;
+    background-color: $aas-green;
+    padding: 1em;
+}
+
+#tagline-home {
+    span {
+        font-size: 2em;
+        color: white;
+        background-color: $aas-text;
+        padding: 0.2em 0.8em;
+        margin: 0.5em 0;
+        font-weight: 600;
+        font-family: 'Nunito', 'Arial', sans-serif;
+        @media only screen and (max-width: 395px) {
+            font-size:1.5em;
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+    a:focus { // remove the green focus for the link in the banner only
+        outline: 2px solid #0000;
+    }
+}
+
+//---------------------------------------- FOOTER ------------------------------------------------//
+.govuk-footer {
+    font-size: 1em;
+    background-color: #373737;
+    padding-top: 1em;
+    border-top: solid 0.3em #4f8f00;
+    p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
+        color:  #ffffff;
+        font-size: 1em;
+    }
+}
+
+.govuk-footer__link{
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration: none;
+}
+.govuk-footer__link:hover {
+    text-decoration: underline;
+
+}
+.govuk-footer__inline-list-item{
+    padding: 1em;
+}
+.govuk-footer__meta-item {
+    margin-bottom: 0;
+}
+.govuk-footer__link:focus{
+    background-color: #f5f5f5;
+    outline: 3px solid #fd0;
+    color: $aas-text !important;
+}
+
+//---------------------------------------- BODY------------------------------------------------//
+
+body p, ul, li , a, span, .govuk-link, .govuk-hint,
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
+.govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
+    color: $aas-text;
+    font-family: 'Nunito', 'Arial', sans-serif;
+}
+
+.tag-green {
+    background-color: $aas-green;
+    padding: 0.5em;
+    color: #ffffff;
+  }
+
+.govuk-list--bullet, .govuk-list--number{
+    margin-left: 1.5em;
+}
+
+li {
+      margin: 0.8em auto;
+}
+
+.explanation {
+    border-left: 10px solid $aas-green;
+    background-color: #e3f5ce;
+/* 
+    border: solid 3px $aas-green;
+    margin: 1em 0;
+    padding: 1.5em 1em;
+    border-radius: 1.5em;
+    p, h3, li, span, a {
+        font-weight: 600;
+    }
+*/
+}
+
+.govuk-inset-text.warning {
+    border-left: 10px solid $aas-warning;
+    background-color: #f1e3e3;
+/* 
+    border: solid 3px $aas-warning;
+    margin: 1em 0;
+    padding: 1.5em 1em;
+    border-radius: 1.5em;
+*/
+    h3, h2 {
+        color: $aas-warning ;
+        font-weight: 700;
+    }
+}
+
+.govuk-inset-text.notes {
+    border-left: 10px solid #939393;
+    background-color: #ededed;
+    p, li, span, a , h3, h2{
+        color: #595959 ;
+    }
+    h3, h2 {
+        font-weight: 700;
+    }
+}
+
+
+.govuk-link, a, .govuk-link:link, a:link,
+.govuk-link:visited, a:visited, .govuk-link:active, a:active{
+    color: $aas-link
+}
+
+.govuk-link:focus, a:focus{
+    outline: 2px solid $aas-green;
+}
+
+.govuk-link:hover, a:hover{
+    color: $aas-text;
+}
+
+.govuk-details__summary {
+    color: $aas-green
+}
+
+.govuk-details__text {
+    border-left: 5px solid $aas-green; 
+}
+
+.govuk-tag {
+    //text-transform: none;
+    font-size: 0.8em;
+}
+
+.govuk-tag.govuk-tag--red {
+    color: #ffffff;
+    background-color: #ca3434;
+}
+
+.govuk-tag.govuk-tag--green {
+    color: #ffffff;
+    background-color: $aas-green;
+}
+.govuk-tag.govuk-tag--yellow {
+    color: $aas-text;
+    background-color: rgb(248, 223, 62);
+}
+
+img {
+    max-width: 100%;
+}
+
+::selection {
+    color: #000000;
+    background: #ededed
+  }

@@ -1,0 +1,52 @@
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Start - Good Service Scale - Assess a service
+{% endblock %}
+
+{% block content %}
+<div class="govuk-!-margin-bottom-9 govuk-!-margin-top-5"><strong class="govuk-tag govuk-tag--red govuk-!-font-size-24">Under construction</strong></div>
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Using the Good service scale</h1>
+
+      {{ govukWarningText({
+        text: "This is a personal project based on the work of Lou Downe",
+        iconFallbackText: "Warning"
+      }) }}
+      
+      <h2 class="govuk-heading-m">What are the principles?</h2>
+      <p>The <a href="https://good.services/the-good-services-scale" target="_blank" rel="noopener">Good service scale</a> has 15 principles.</p>
+      <p>The Good Service Scale will help you and your team understand how well your service is performing for your users, where it needs to be improved, and build a clear a plan to improve it.</p>
+      <p><strong>Learn about it on <a href="https://good.services" target="_blank" rel="noopener">Lou's website</a>. They offer the tool in various formats.</strong></p>
+      <ol class="govuk-list govuk-list--number govuk-!-margin-top-7">
+        <li>Be easy to find</li>
+        <li>Clearly explain the purpose of your service</li>
+        <li>Set the expectations a user has of your service</li>
+        <li>Enable each user to complete the outcome they set out to do</li>
+        <li>Work in a way that is familiar</li>
+        <li>Require no prior knowledge to use</li>
+        <li>Be agnostic of organisational structures</li>
+        <li>Require the minimum possible steps to complete</li>
+        <li>Be consistent throughout</li>
+        <li>Have no dead ends</li>
+        <li>Be usable by everyone, equally</li>
+        <li>Encourage the right behaviours from users and service providers</li>
+        <li>Respond to change quickly</li>
+        <li>Clearly explain why a decision has been made</li>
+        <li>Make it easy to get human assistance</li>
+      </ol>
+      <div class="govuk-inset-text explanation ">
+        <p>Under construction</p>
+        <p>Will explain the tool and create pages to score each principle and get the final score and recommendations</p>
+      </div>
+    </div>
+  </div> 
+
+{% endblock %}

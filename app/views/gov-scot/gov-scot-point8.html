@@ -1,0 +1,110 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 8 - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">8. Create a secure service which protects users’ privacy</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/create-a-secure-service/" target="_blank" rel="noopener">See point 8 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Evaluate what data the service will be collecting storing and providing. Understand how government classifies that data, the organisation’s legal responsibilities, and security risks associated with the service.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+        <p>Government services often hold personal and sensitive information about users. Government has a legal duty to protect this information. Failing to do so would undermine public trust in government services.</p>
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Approach risk in a proportionate way</h3>
+        <p>Identify security and privacy threats to the service and have a robust, proportionate approach to managing fraud and security risks.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point8-risk">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point8-risk" name="sg-point8-risk">
+            <option value="default" {% if data ['sg-point8-risk'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point8-risk'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point8-risk'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point8-risk'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point8-risk'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Work with business and information risk teams</h3>
+        <p>Take advice from senior information risk owners (SIROs), information asset owners (IAOs) and data guardians to make sure the service meets security requirements and regulations without putting delivery at risk.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point8-info">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point8-info" name="sg-point8-info">
+          <option value="default" {% if data ['sg-point8-info'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point8-info'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point8-info'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point8-info'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point8-info'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Make security sustainable</h3>
+      <p>Plan and budget to manage security during the life of the service, for example by responding to new threats, putting controls in place and applying security patches to software.</p>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sg-point8-sustainable">
+        Are you doing it?
+        </label>
+        <select class="govuk-select" id="sg-point8-sustainable" name="sg-point8-sustainable">
+        <option value="default" {% if data ['sg-point8-sustainable'] === 'default' %} selected="true" {% endif %}>Select</option>
+        <option value="1" {% if data ['sg-point8-sustainable'] === '1' %} selected="true" {% endif %}>Aye</option>
+        <option value="2" {% if data ['sg-point8-sustainable'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+        <option value="3" {% if data ['sg-point8-sustainable'] === '3' %} selected="true" {% endif %}>Not yet</option>
+        <option value="0" {% if data ['sg-point8-sustainable'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+        </select>
+      </div>
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Protect users’ personal information</h3>
+      <p>Collect and process users’ personal information in a way that’s secure and respects their privacy.</p>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sg-point8-protect">
+        Are you doing it?
+        </label>
+        <select class="govuk-select" id="sg-point8-protect" name="sg-point8-protect">
+        <option value="default" {% if data ['sg-point8-protect'] === 'default' %} selected="true" {% endif %}>Select</option>
+        <option value="1" {% if data ['sg-point8-protect'] === '1' %} selected="true" {% endif %}>Aye</option>
+        <option value="2" {% if data ['sg-point8-protect'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+        <option value="3" {% if data ['sg-point8-protect'] === '3' %} selected="true" {% endif %}>Not yet</option>
+        <option value="0" {% if data ['sg-point8-protect'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+        </select>
+      </div>
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Test your systems</h3>
+      <p>Carry out appropriate vulnerability and penetration testing</p>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sg-point8-test">
+        Are you doing it?
+        </label>
+        <select class="govuk-select" id="sg-point8-test" name="sg-point8-test">
+        <option value="default" {% if data ['sg-point8-test'] === 'default' %} selected="true" {% endif %}>Select</option>
+        <option value="1" {% if data ['sg-point8-test'] === '1' %} selected="true" {% endif %}>Aye</option>
+        <option value="2" {% if data ['sg-point8-test'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+        <option value="3" {% if data ['sg-point8-test'] === '3' %} selected="true" {% endif %}>Not yet</option>
+        <option value="0" {% if data ['sg-point8-test'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+        </select>
+      </div>
+    
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 9"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

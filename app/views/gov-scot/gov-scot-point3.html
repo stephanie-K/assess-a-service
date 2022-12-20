@@ -1,0 +1,85 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 3  - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">3. Design and deliver a joined-up experience</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/joined-up-experience/" target="_blank" rel="noopener">See point 3 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Create a service that meets users’ needs by using channels appropriately (online, phone, paper and face to face) and link to other services they might need.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+            <p>Users shouldn’t be excluded or have a poor experience because of the way government is structured, or because a service is only designed for digital channels.</p>
+            <p>You should start by understanding how users need to access your service and design an experience that works for them. This means you can provide a consistent experience across offline and online channels.</p>            
+            <p>Putting the same value on every interaction people will have with your service means it’s less likely to fail, which is important for building trust with users.</p>
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Be responsible for the whole service, not just the digital parts</h3>
+        <p>Understand how people access your service and make sure you have a plan for all parts of it.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point3-whole">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point3-whole" name="sg-point3-whole">
+            <option value="default" {% if data ['sg-point3-whole'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point3-whole'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point3-whole'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point3-whole'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point3-whole'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Make sure the online and offline experience is the same</h3>
+        <p>Use consistent design patterns, such as language and style, to help people understand where they are and what they need to do.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point3-offline">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point3-offline" name="sg-point3-offline">
+          <option value="default" {% if data ['sg-point3-offline'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point3-offline'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point3-offline'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point3-offline'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point3-offline'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Understand where improvements can be made</h3>
+      <p>Put a plan in place to make improvements to processes, systems or structures when the service goes live.</p>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sg-point3-improve">
+        Are you doing it?
+        </label>
+        <select class="govuk-select" id="sg-point3-improve" name="sg-point3-improve">
+        <option value="default" {% if data ['sg-point3-improve'] === 'default' %} selected="true" {% endif %}>Select</option>
+        <option value="1" {% if data ['sg-point3-improve'] === '1' %} selected="true" {% endif %}>Aye</option>
+        <option value="2" {% if data ['sg-point3-improve'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+        <option value="3" {% if data ['sg-point3-improve'] === '3' %} selected="true" {% endif %}>Not yet</option>
+        <option value="0" {% if data ['sg-point3-improve'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+        </select>
+    </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 4"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

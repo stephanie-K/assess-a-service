@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/aas.ico" type="image/x-icon" />
+{% endblock %}
+
+
+{% block head %}
+    {% block stylesheets %}
+    {% include "govuk-prototype-kit/includes/stylesheets.html" %}
+    <link href="/public/stylesheets/aas.css" media="all" rel="stylesheet" type="text/css" />
+        {% for stylesheetUrl in extensionConfig.stylesheets %}
+        <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+        {% endfor %}  
+    {% endblock %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__content"  id="tagline-home">
+    <a href="/index.html">
+      <span>
+        Assess a service
+      </span>
+    </a>  
+  </div>
+
+</div>
+{% endblock %}
+{% block footer %}
+
+<footer class="govuk-footer" role="contentinfo">
+  <div class="govuk-width-container govuk-!-margin-bottom-9">
+    <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/index.html">Home</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/about.html">About</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/how.html">How to use</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/contact.html">Get in touch</a>
+            </li>
+            <li class="govuk-footer__inline-list-item ">
+              <a class="govuk-footer__link small-footer" href="/manage-prototype/clear-data">Clear the data</a>
+            </li>
+          </ul>
+          <br>
+          <p>This is a prototype and just a personal project.</p>
+          <p>You can find the <a class="govuk-footer__link" href="https://github.com/stephanie-K/assess-a-service" target="_blank" rel="noopener">code for the website in this Github Repository</a>.</p>
+          <p class="govuk-!-margin-bottom-9">By Stéphanie Krus.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+{% endblock %}

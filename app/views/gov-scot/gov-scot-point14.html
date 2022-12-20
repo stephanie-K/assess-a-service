@@ -1,0 +1,73 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 14 - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">14. Ensure sponsor acceptance</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/sponsor-acceptance/" target="_blank" rel="noopener">See point 14 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>
+        Make sure the right people know what’s happening with the service, at the right level of detail (including, for example, the minister or chief executive).</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>It’s important that decisions are understood by those responsible for the service - and that they accept any risks identified by the service team before it goes live.</p>
+          <p>Senior responsible staff need to know how long the project will last, be kept up-to-date with progress and make key decisions when needed.</p>
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Include the right people as the service develops</h3>
+        <p>Making sure user needs and ways of working are understood and supported.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point14-include">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point14-include" name="sg-point14-include">
+            <option value="default" {% if data ['sg-point14-include'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point14-include'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point14-include'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point14-include'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point14-include'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Be open and transparent</h3>
+        <p>Communicate what you know about user needs, policy and technology constraints and any risks with the service.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point14-open">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point14-open" name="sg-point14-open">
+          <option value="default" {% if data ['sg-point14-open'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point14-open'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point14-open'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point14-open'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point14-open'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+
+  
+    
+        
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "See the summary"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

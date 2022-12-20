@@ -1,0 +1,148 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 12 - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">12. Use and contribute to shared digital practices, processes, components, standards, patterns and platforms</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/use-and-contribute-to-shared-digital-practices-processes-components-standards-patterns-and-platforms/" target="_blank" rel="noopener">See point 12 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Where possible, build on what’s already been done across government. Share your work publicly so others can benefit.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You don’t have to solve problems that have already been solved. And using industry standards means systems and services can integrate more easily.</p>
+          <p>If you use existing assets, products and services, you can save money and redirect this into improving services and meeting user needs.</p>          
+          <p>By using a component or pattern that’s already been extensively tested, you can provide users with a good experience in a cost effective way.</p>          
+          <p>Following industry data standards means you can improve the quality of information about your service to create new opportunities for innovation and reduce duplication of effort.</p>          
+          <p>Sharing knowledge, ways of working, tools and research insights, means saving government time and money.</p>        
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Reuse national assets</h3>
+        <p>Including government services and platforms, for example mygov.scot for service information and statistics.gov.scot for publishing open data.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point12-reuse">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point12-reuse" name="sg-point12-reuse">
+            <option value="default" {% if data ['sg-point12-reuse'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point12-reuse'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point12-reuse'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point12-reuse'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point12-reuse'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Use and contribute to open standards.</h3>
+          <p>Identify the industry-approved standards you will adopt</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point12-open">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point12-open" name="sg-point12-open">
+            <option value="default" {% if data ['sg-point12-open'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point12-open'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point12-open'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point12-open'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point12-open'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Use data standards</h3>
+          <p>Use terms from shared, standardised vocabularies to encode data and metadata and use persistent URIs as identifiers.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point12-data">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point12-data" name="sg-point12-data">
+            <option value="default" {% if data ['sg-point12-data'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point12-data'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point12-data'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point12-data'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point12-data'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Make a plan to improve the quality of your data</h3>
+          <p>Recognise what data you have and how it can be used to improve your service.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point12-plan">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point12-plan" name="sg-point12-plan">
+            <option value="default" {% if data ['sg-point12-plan'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point12-plan'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point12-plan'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point12-plan'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point12-plan'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Make your data available for re-use</h3>
+          <p>Create data sets that are potentially useful to others inside or outside government and publish them in an open, machine readable format.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point12-available">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point12-available" name="sg-point12-available">
+            <option value="default" {% if data ['sg-point12-available'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point12-available'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point12-available'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point12-available'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point12-available'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Share your outputs for the benefit of others</h3>
+          <p>Consider where you can share code, services, components, service patterns, research insights or knowledge.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point12-share">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point12-share" name="sg-point12-share">
+            <option value="default" {% if data ['sg-point12-share'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point12-share'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point12-share'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point12-share'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point12-share'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Share what you’re doing</h3>
+          <p>If you’re spending public money, it’s important to make sure others get value from your work</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point12-doing">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point12-doing" name="sg-point12-doing">
+            <option value="default" {% if data ['sg-point12-doing'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point12-doing'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point12-doing'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point12-doing'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point12-doing'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+    
+        
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 13"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

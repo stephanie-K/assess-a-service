@@ -1,0 +1,121 @@
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 2 - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">2. Solve a whole problem for users</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/solve-a-whole-problem-for-users/" target="_blank" rel="noopener">See point 2 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Work towards creating a service that solves one whole problem for users, working across organisational boundaries where necessary.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>People don’t organise their lives around government - and they shouldn’t have to understand how government works to access the services they need.</p>
+          <p>If we understand people’s lives, we can learn which organisations are responsible for providing services needed by those users and find effective ways to deliver the best possible outcomes.</p>          
+          <p>That doesn’t mean trying to fix everything at once or building complicated systems that are difficult to deliver because they try to do too much. Start small and deliver value to users incrementally and frequently.</p>          
+          <p>Doing work early to see the big picture - users, their problems and needs and the organisations that will serve those needs - means you’ll have a good understanding of the context you are working in, and what problems you’re going to solve.</p>          
+          <p>Even when what you learn about users can’t be solved by your project, it’s important to link to related services or share those insights with organisations who can use them.</p>
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Map the landscape</h3>
+        <p>Take time to understand how everything fits together - from user journeys to technology - and share this information.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point2-map">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point2-map" name="sg-point2-map">
+            <option value="default" {% if data ['sg-point2-map'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point2-map'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point2-map'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point2-map'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point2-map'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Define your scope</h3>
+        <p>Use what you learn about users to scope your service.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point2-scope">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point2-scope" name="sg-point2-scope">
+          <option value="default" {% if data ['sg-point2-scope'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point2-scope'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point2-scope'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point2-scope'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point2-scope'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+
+        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Understand constraints</h3>
+        <p>Make sure organisational constraints - like procurement, policy and legislation - are understood and communicated.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point2-constraints">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point2-constraints" name="sg-point2-constraints">
+          <option value="default" {% if data ['sg-point2-constraints'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point2-constraints'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point2-constraints'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point2-constraints'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point2-constraints'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Remove barriers that will affect the service</h3>
+        <p>This might include working with policy professionals to update legislation.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point2-barriers">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point2-barriers" name="sg-point2-barriers">
+          <option value="default" {% if data ['sg-point2-barriers'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point2-barriers'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point2-barriers'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point2-barriers'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point2-barriers'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Work with other organisations</h3>
+        <p>Understand where you fit together as part of a user journey and work to improve the experience, for example reducing the number of times users are asked to provide the same information (while respecting their privacy).</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point2-others">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point2-others" name="sg-point2-others">
+          <option value="default" {% if data ['sg-point2-others'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point2-others'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point2-others'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point2-others'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point2-others'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+        
+    
+        
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 3"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

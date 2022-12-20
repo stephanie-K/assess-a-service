@@ -1,0 +1,389 @@
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Emotional harm - Ethics assessment by Spotify - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">Emotional harm</h1>
+
+      <p>There 9 potential effects:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Addiction</li>
+        <li>Anxiety</li>
+        <li>Betrayal of trust or privacy</li>
+        <li>Depression</li>
+        <li>Exclusion</li>
+        <li>Harm to relationship</li>
+        <li>Negative self-image</li>
+        <li>Psychological harm to children</li>
+        <li>Verbal abuse</li>
+      </ul>
+      <div class="govuk-inset-text explanation ">
+      <p>For each one on this page, if relevant to you, then write an example and select a number (1-5) for the Risk of effect.</p>
+      <p>If not relevant, just move to the next one.</p>
+      </div>
+
+      <form class="form" method="post">
+      
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Addiction</h2>
+        {{ govukTextarea({
+            name: "spot-addiction",
+            id: "spot-addiction",
+            label: {
+              text: "Example of how you might encourage or cause this",
+              classes: "govuk-label--m",
+              value: data ['spot-addiction']
+            },
+            hint: {
+              text: "Leave empty if not relevant to you."
+            }
+          }) }}
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="risk-addiction">
+              Risk of effect
+            </label>
+            <select class="govuk-select" id="risk-addiction" name="risk-addiction">
+              <option value="0" {% if data ['risk-addiction'] === '0' %} selected="true" {% endif %}>Select</option>
+              <option value="1" {% if data ['risk-addiction'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+              <option value="2" {% if data ['risk-addiction'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+              <option value="3" {% if data ['risk-addiction'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+              <option value="4" {% if data ['risk-addiction'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+              <option value="5" {% if data ['risk-addiction'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+            </select>
+          </div>
+  
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                See the scale for risk of effect
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              {% include "../includes/risk-of-effect-scale.html"  %}
+            </div>
+          </details>
+  
+        <h2 class="govuk-heading-l">Anxiety</h2>
+        {{ govukTextarea({
+            name: "spot-anxiety",
+            id: "spot-anxiety",
+            label: {
+              text: "Example of how you might encourage or cause this",
+              classes: "govuk-label--m",
+              value: data ['spot-anxiety']
+            },
+            hint: {
+              text: "Leave empty if not relevant to you."
+            }
+          }) }}
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="risk-anxiety">
+              Risk of effect
+            </label>
+            <select class="govuk-select" id="risk-anxiety" name="risk-anxiety">
+              <option value="0" {% if data ['risk-anxiety'] === '0' %} selected="true" {% endif %}>Select</option>
+              <option value="1" {% if data ['risk-anxiety'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+              <option value="2" {% if data ['risk-anxiety'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+              <option value="3" {% if data ['risk-anxiety'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+              <option value="4" {% if data ['risk-anxiety'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+              <option value="5" {% if data ['risk-anxiety'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+            </select>
+          </div>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                See the scale for risk of effect
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              {% include "../includes/risk-of-effect-scale.html"  %}
+            </div>
+          </details>
+
+        <h2 class="govuk-heading-l">Betrayal of trust or privacy</h2>
+        {{ govukTextarea({
+            name: "spot-privacy",
+            id: "spot-privacy",
+            label: {
+              text: "Example of how you might encourage or cause this",
+              classes: "govuk-label--m",
+              value: data ['spot-privacy']
+            },
+            hint: {
+              text: "Leave empty if not relevant to you."
+            }
+          }) }}
+        <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="risk-privacy">
+            Risk of effect
+        </label>
+        <select class="govuk-select" id="risk-privacy" name="risk-privacy">
+            <option value="0" {% if data ['risk-privacy'] === '0' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['risk-privacy'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+            <option value="2" {% if data ['risk-privacy'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+            <option value="3" {% if data ['risk-privacy'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+            <option value="4" {% if data ['risk-privacy'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+            <option value="5" {% if data ['risk-privacy'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+        </select>
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            See the scale for risk of effect
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+            {% include "../includes/risk-of-effect-scale.html"  %}
+        </div>
+        </details>
+
+        <h2 class="govuk-heading-l">Depression</h2>
+        {{ govukTextarea({
+            name: "spot-depression",
+            id: "spot-depression",
+            label: {
+              text: "Example of how you might encourage or cause this",
+              classes: "govuk-label--m",
+              value: data ['spot-depression']
+            },
+            hint: {
+              text: "Leave empty if not relevant to you."
+            }
+          }) }}
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="risk-depression">
+              Risk of effect
+            </label>
+            <select class="govuk-select" id="risk-depression" name="risk-depression">
+              <option value="0" {% if data ['risk-depression'] === '0' %} selected="true" {% endif %}>Select</option>
+              <option value="1" {% if data ['risk-depression'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+              <option value="2" {% if data ['risk-depression'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+              <option value="3" {% if data ['risk-depression'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+              <option value="4" {% if data ['risk-depression'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+              <option value="5" {% if data ['risk-depression'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+            </select>
+          </div>
+  
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                See the scale for risk of effect
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              {% include "../includes/risk-of-effect-scale.html"  %}
+            </div>
+          </details>
+
+        <h2 class="govuk-heading-l">Exclusion</h2>
+        {{ govukTextarea({
+            name: "spot-exclusion",
+            id: "spot-exclusion",
+            label: {
+              text: "Example of how you might encourage or cause this",
+              classes: "govuk-label--m",
+              value: data ['spot-exclusion']
+            },
+            hint: {
+              text: "Leave empty if not relevant to you."
+            }
+          }) }}
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="risk-exclusion">
+              Risk of effect
+            </label>
+            <select class="govuk-select" id="risk-exclusion" name="risk-exclusion">
+              <option value="0" {% if data ['risk-exclusion'] === '0' %} selected="true" {% endif %}>Select</option>
+              <option value="1" {% if data ['risk-exclusion'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+              <option value="2" {% if data ['risk-exclusion'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+              <option value="3" {% if data ['risk-exclusion'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+              <option value="4" {% if data ['risk-exclusion'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+              <option value="5" {% if data ['risk-exclusion'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+            </select>
+          </div>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                See the scale for risk of effect
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              {% include "../includes/risk-of-effect-scale.html"  %}
+            </div>
+          </details>
+
+        <h2 class="govuk-heading-l">Harm to relationship</h2>
+        {{ govukTextarea({
+            name: "spot-relationship",
+            id: "spot-relationship",
+            label: {
+              text: "Example of how you might encourage or cause this",
+              classes: "govuk-label--m",
+              value: data ['spot-relationship']
+            },
+            hint: {
+              text: "Leave empty if not relevant to you."
+            }
+          }) }}
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="risk-relationship">
+              Risk of effect
+            </label>
+            <select class="govuk-select" id="risk-relationship" name="risk-relationship">
+              <option value="0" {% if data ['risk-relationship'] === '0' %} selected="true" {% endif %}>Select</option>
+              <option value="1" {% if data ['risk-relationship'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+              <option value="2" {% if data ['risk-relationship'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+              <option value="3" {% if data ['risk-relationship'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+              <option value="4" {% if data ['risk-relationship'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+              <option value="5" {% if data ['risk-relationship'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+            </select>
+          </div>
+  
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                See the scale for risk of effect
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              {% include "../includes/risk-of-effect-scale.html"  %}
+            </div>
+          </details>
+
+        <h2 class="govuk-heading-l">Negative self-image</h2>
+        {{ govukTextarea({
+            name: "spot-selfimage",
+            id: "spot-selfimage",
+            label: {
+              text: "Example of how you might encourage or cause this",
+              classes: "govuk-label--m",
+              value: data ['spot-selfimage']
+            },
+            hint: {
+              text: "Leave empty if not relevant to you."
+            }
+          }) }}
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="risk-selfimage">
+              Risk of effect
+            </label>
+            <select class="govuk-select" id="risk-selfimage" name="risk-selfimage">
+              <option value="0" {% if data ['risk-selfimage'] === '0' %} selected="true" {% endif %}>Select</option>
+              <option value="1" {% if data ['risk-selfimage'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+              <option value="2" {% if data ['risk-selfimage'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+              <option value="3" {% if data ['risk-selfimage'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+              <option value="4" {% if data ['risk-selfimage'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+              <option value="5" {% if data ['risk-selfimage'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+            </select>
+          </div>
+  
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                See the scale for risk of effect
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              {% include "../includes/risk-of-effect-scale.html"  %}
+            </div>
+          </details>
+
+        <h2 class="govuk-heading-l">Psychological harm to children</h2>
+        {{ govukTextarea({
+            name: "spot-children",
+            id: "spot-children",
+            label: {
+              text: "Example of how you might encourage or cause this",
+              classes: "govuk-label--m",
+              value: data ['spot-children']
+            },
+            hint: {
+              text: "Leave empty if not relevant to you."
+            }
+          }) }}
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="risk-children">
+              Risk of effect
+            </label>
+            <select class="govuk-select" id="risk-children" name="risk-children">
+              <option value="0" {% if data ['risk-children'] === '0' %} selected="true" {% endif %}>Select</option>
+              <option value="1" {% if data ['risk-children'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+              <option value="2" {% if data ['risk-children'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+              <option value="3" {% if data ['risk-children'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+              <option value="4" {% if data ['risk-children'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+              <option value="5" {% if data ['risk-children'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+            </select>
+          </div>
+  
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                See the scale for risk of effect
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              {% include "../includes/risk-of-effect-scale.html"  %}
+            </div>
+          </details>
+
+
+        <h2 class="govuk-heading-l">Verbal abuse</h2>
+        {{ govukTextarea({
+            name: "spot-abuse",
+            id: "spot-abuse",
+            label: {
+              text: "Example of how you might encourage or cause this",
+              classes: "govuk-label--m",
+              value: data ['spot-abuse']
+            },
+            hint: {
+              text: "Leave empty if not relevant to you."
+            }
+          }) }}
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="risk-abuse">
+              Risk of effect
+            </label>
+            <select class="govuk-select" id="risk-abuse" name="risk-abuse">
+              <option value="0" {% if data ['risk-abuse'] === '0' %} selected="true" {% endif %}>Select</option>
+              <option value="1" {% if data ['risk-abuse'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+              <option value="2" {% if data ['risk-abuse'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+              <option value="3" {% if data ['risk-abuse'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+              <option value="4" {% if data ['risk-abuse'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+              <option value="5" {% if data ['risk-abuse'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+            </select>
+          </div>
+  
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                See the scale for risk of effect
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              {% include "../includes/risk-of-effect-scale.html"  %}
+            </div>
+          </details>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        </form>
+      </div>
+    </div> 
+    {% endblock %}

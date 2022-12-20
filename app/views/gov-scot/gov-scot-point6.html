@@ -1,0 +1,129 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 6  - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">6. Have a multidisciplinary team</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/multidisciplinary-team/" target="_blank" rel="noopener">See point 6 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Create a team of people with a diverse mix of skills and expertise that can create and operate the service in a sustainable way.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>It’s important that people who are involved in decision-making are part of the team, so they’re accountable to the team - and the team as a whole can respond quickly to what they learn about users and their needs.</p>
+          <p>Start with the assumption that you’ll need a broad range of expertise and that a diverse team is more likely to come up with the best solution.</p>
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Make sure the team has the right mix of skills</h3>
+        <p>Build a team based on the needs of the service and stage of delivery, co-located as far as possible.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point6-mix">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point6-mix" name="sg-point6-mix">
+            <option value="default" {% if data ['sg-point6-mix'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point6-mix'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point6-mix'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point6-mix'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point6-mix'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Make sure the team covers all aspects of the service</h3>
+          <p>Making sure the expertise is in place to look at offline and online channels and the backend systems the service will need to integrate with.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point6-aspects">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point6-aspects" name="sg-point6-aspects">
+            <option value="default" {% if data ['sg-point6-aspects'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point6-aspects'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point6-aspects'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point6-aspects'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point6-aspects'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Establish ways of working</h3>
+          <p>Help the team understand what’s being delivered, making sure team members know how to work together and manage their day-to-day work.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point6-wow">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point6-wow" name="sg-point6-wow">
+            <option value="default" {% if data ['sg-point6-wow'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point6-wow'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point6-wow'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point6-wow'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point6-wow'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Promote co-production</h3>
+          <p>Include all parts of the team (for example policy and frontline advisors) in the definition of user needs and decision-making.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point6-copro">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point6-copro" name="sg-point6-copro">
+            <option value="default" {% if data ['sg-point6-copro'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point6-copro'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point6-copro'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point6-copro'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point6-copro'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Provide access to expertise where needed</h3>
+          <p>Bring in specialist knowledge to cover gaps in the team.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point6-expert">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point6-expert" name="sg-point6-expert">
+            <option value="default" {% if data ['sg-point6-expert'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point6-expert'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point6-expert'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point6-expert'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point6-expert'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Create a sustainable team to manage the service</h3>
+          <p>Move key roles in the team to permanent staff (reducing reliance on contractors and third party suppliers) as the service goes into production.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point6-sustainable">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point6-sustainable" name="sg-point6-sustainable">
+            <option value="default" {% if data ['sg-point6-sustainable'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point6-sustainable'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point6-sustainable'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point6-sustainable'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point6-sustainable'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+        
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 7"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

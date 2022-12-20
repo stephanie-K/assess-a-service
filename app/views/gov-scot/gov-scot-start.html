@@ -1,0 +1,61 @@
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Start - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Using the Digital Scotland Service Standard</h1>
+
+      {{ govukWarningText({
+        text: "This is a personal project not a real tool from mygov-scot",
+        iconFallbackText: "Warning"
+      }) }}
+      
+      <h2 class="govuk-heading-m">What are the principles?</h2>
+      <p>The new <a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/" target="_blank" rel="noopener">Service standard</a> has 14 points.</p>
+      <p>The service standard aims to make sure that services in Scotland are continually improving and that users are always the focus.</p>
+      <ol class="govuk-list govuk-list--number govuk-!-margin-top-7">
+        <li>Understanding users and their needs</li>
+        <li>Solve a whole problem for users</li>
+        <li>Design and deliver a joined-up experience</li>
+        <li>Help users succeed first time</li>
+        <li>Make sure everyone can use the service</li>
+        <li>Have a multidisciplinary team</li>
+        <li>Iterate and improve frequently</li>
+        <li>Create a secure service which protects users’ privacy</li>
+        <li>Define what success looks like and publish performance data</li>
+        <li>Choose the right tools and technology</li>
+        <li>Make new source code open</li>
+        <li>Use and contribute to shared digital practices, processes, components, standards, patterns and platforms</li>
+        <li>Operate a reliable service</li>
+        <li>Ensure sponsor acceptance</li>
+      </ol>
+
+      <div class="govuk-inset-text explanation  govuk-!-margin-bottom-9">
+        <p>For each point, you will:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>learn why it's importnant</li>
+          <li>assess how well you are doing</li>
+        </ul>
+        <p>The final summary will show what you need to improve.</p>
+      </div>
+      <form class="form" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Start now",
+        isStartButton: true
+      }) }} 
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

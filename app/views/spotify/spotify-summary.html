@@ -1,0 +1,787 @@
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Summary - Ethics assessment by Spotify - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">Ethics assessment - Summary</h1>
+      <div class="govuk-inset-text explanation  govuk-!-margin-bottom-6">
+        <p>Decide of a priority for each effect when there is an action to take:</p>
+        <p>1: Low, 2: Medium, 3: High</p>
+        <p>If you didn't fill in the example for an effect, it won't appear on this page.</p>
+      </div>
+      <form class="form" method="post">
+      <h2 class="govuk-heading-l">Physical harm</h2>
+      {% if data ['spot-distraction']%}
+      <h3 class="govuk-heading-m">Accidents due to distraction</h3>
+        <p><strong>Example</strong>: {{data['spot-distraction']}}</p>
+      {% if data['risk-distraction'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-distraction']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-distraction'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-distraction'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-distraction'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-distraction'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-distraction'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-distraction">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-distraction" name="priority-distraction">
+                <option value="0" {% if data ['priority-distraction'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-distraction'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-distraction'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-distraction'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% if data ['spot-death']%}
+      <h3 class="govuk-heading-m">Death</h3>
+            <p><strong>Example</strong>: {{data['spot-death']}}</p>
+      {% if data['risk-death'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-death']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-death'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-death'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-death'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-death'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-death'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-death">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-death" name="priority-death">
+                <option value="0" {% if data ['priority-death'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-death'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-death'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-death'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% if data ['spot-exploitation']%}
+      <h3 class="govuk-heading-m">Exploitation of workers</h3>
+            <p><strong>Example</strong>: {{data['spot-exploitation']}}</p>
+      {% if data['risk-exploitation'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-exploitation']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-exploitation'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-exploitation'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-exploitation'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-exploitation'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-exploitation'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-exploitation">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-exploitation" name="priority-exploitation">
+                <option value="0" {% if data ['priority-exploitation'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-exploitation'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-exploitation'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-exploitation'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% if data ['spot-data']%}
+      <h3 class="govuk-heading-m">Exposure of personal data</h3>
+            <p><strong>Example</strong>: {{data['spot-data']}}</p>
+      {% if data['risk-data'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-data']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-data'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-data'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-data'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-data'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-data'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-data">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-data" name="priority-data">
+                <option value="0" {% if data ['priority-data'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-data'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-data'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-data'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% if data ['spot-financial']%}
+      <h3 class="govuk-heading-m">Financial insecurity</h3>
+            <p><strong>Example</strong>: {{data['spot-financial']}}</p>
+      {% if data['risk-financial'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-financial']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-financial'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-financial'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-financial'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-financial'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-financial'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-financial">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-financial" name="priority-financial">
+                <option value="0" {% if data ['priority-financial'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-financial'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-financial'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-financial'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% if data ['spot-inactivity']%}
+      <h3 class="govuk-heading-m">Inactivity</h3>
+            <p><strong>Example</strong>: {{data['spot-inactivity']}}</p>
+      {% if data['risk-inactivity'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-inactivity']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-inactivity'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-inactivity'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-inactivity'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-inactivity'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-inactivity'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-inactivity">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-inactivity" name="priority-inactivity">
+                <option value="0" {% if data ['priority-inactivity'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-inactivity'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-inactivity'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-inactivity'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% if data ['spot-injury']%}
+      <h3 class="govuk-heading-m">Muscle strain or other injuries</h3>
+            <p><strong>Example</strong>: {{data['spot-injury']}}</p>
+      {% if data['risk-injury'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-injury']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-injury'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-injury'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-injury'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-injury'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-injury'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-injury">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-injury" name="priority-injury">
+                <option value="0" {% if data ['priority-injury'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-injury'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-injury'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-injury'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% if data ['spot-selfcare']%}
+      <h3 class="govuk-heading-m">Neglect of basic self-care</h3>
+            <p><strong>Example</strong>: {{data['spot-selfcare']}}</p>
+      {% if data['risk-selfcare'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-selfcare']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-selfcare'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-selfcare'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-selfcare'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-selfcare'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-selfcare'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-selfcare">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-selfcare" name="priority-selfcare">
+                <option value="0" {% if data ['priority-selfcare'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-selfcare'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-selfcare'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-selfcare'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% if data ['spot-sleep']%}
+      <h3 class="govuk-heading-m">Sleep deprivation</h3>
+            <p><strong>Example</strong>: {{data['spot-sleep']}}</p>
+      {% if data['risk-sleep'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-sleep']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-sleep'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-sleep'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-sleep'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-sleep'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-sleep'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-sleep">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-sleep" name="priority-sleep">
+                <option value="0" {% if data ['priority-sleep'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-sleep'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-sleep'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-sleep'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% if data ['spot-violence']%}
+      <h3 class="govuk-heading-m">Violence</h3>
+            <p><strong>Example</strong>: {{data['spot-violence']}}</p>
+      {% if data['risk-violence'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-violence']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-violence'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-violence'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-violence'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-violence'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-violence'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-violence">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-violence" name="priority-violence">
+                <option value="0" {% if data ['priority-violence'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-violence'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-violence'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-violence'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-l">Emotional harm</h2>
+
+      {% if data ['spot-addiction']%}
+      <h3 class="govuk-heading-m">Addiction</h3>
+                  <p><strong>Example</strong>: {{data['spot-addiction']}}</p>
+      {% if data['risk-addiction'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-addiction']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-addiction'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-addiction'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-addiction'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-addiction'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-addiction'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-addiction">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-addiction" name="priority-addiction">
+                <option value="0" {% if data ['priority-addiction'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-addiction'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-addiction'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-addiction'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+      {% if data ['spot-anxiety']%}
+      <h3 class="govuk-heading-m">Anxiety</h3>
+                  <p><strong>Example</strong>: {{data['spot-anxiety']}}</p>
+      {% if data['risk-anxiety'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-anxiety']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-anxiety'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-anxiety'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-anxiety'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-anxiety'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-anxiety'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-anxiety">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-anxiety" name="priority-anxiety">
+                <option value="0" {% if data ['priority-anxiety'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-anxiety'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-anxiety'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-anxiety'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+      {% if data ['spot-privacy']%}
+      <h3 class="govuk-heading-m">Betrayal of trust or privacy</h3>
+                  <p><strong>Example</strong>: {{data['spot-privacy']}}</p>
+      {% if data['risk-privacy'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-privacy']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-privacy'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-privacy'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-privacy'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-privacy'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-privacy'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-privacy">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-privacy" name="priority-privacy">
+                <option value="0" {% if data ['priority-privacy'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-privacy'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-privacy'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-privacy'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+      {% if data ['spot-depression']%}
+      <h3 class="govuk-heading-m">Depression</h3>
+                  <p><strong>Example</strong>: {{data['spot-depression']}}</p>
+      {% if data['risk-depression'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-depression']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-depression'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-depression'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-depression'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-depression'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-depression'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-depression">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-depression" name="priority-depression">
+                <option value="0" {% if data ['priority-depression'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-depression'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-depression'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-depression'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+      {% if data ['spot-exclusion']%}
+      <h3 class="govuk-heading-m">Exclusion</h3>
+                  <p><strong>Example</strong>: {{data['spot-exclusion']}}</p>
+      {% if data['risk-exclusion'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-exclusion']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-exclusion'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-exclusion'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-exclusion'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-exclusion'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-exclusion'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-exclusion">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-exclusion" name="priority-exclusion">
+                <option value="0" {% if data ['priority-exclusion'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-exclusion'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-exclusion'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-exclusion'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+      {% if data ['spot-relationship']%}
+      <h3 class="govuk-heading-m">Harm to relationship</h3>
+                  <p><strong>Example</strong>: {{data['spot-relationship']}}</p>
+      {% if data['risk-relationship'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-relationship']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-relationship'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-relationship'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-relationship'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-relationship'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-relationship'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-relationship">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-relationship" name="priority-relationship">
+                <option value="0" {% if data ['priority-relationship'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-relationship'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-relationship'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-relationship'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+      {% if data ['spot-selfimage']%}
+      <h3 class="govuk-heading-m">Negative self-image</h3>
+                  <p><strong>Example</strong>: {{data['spot-selfimage']}}</p>
+      {% if data['risk-selfimage'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-selfimage']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-selfimage'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-selfimage'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-selfimage'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-selfimage'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-selfimage'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-selfimage">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-selfimage" name="priority-selfimage">
+                <option value="0" {% if data ['priority-selfimage'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-selfimage'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-selfimage'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-selfimage'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+      {% if data ['spot-children']%}
+      <h3 class="govuk-heading-m">Psychological harm to children</h3>
+                  <p><strong>Example</strong>: {{data['spot-children']}}</p>
+      {% if data['risk-children'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-children']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-children'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-children'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-children'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-children'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-children'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-children">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-children" name="priority-children">
+                <option value="0" {% if data ['priority-children'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-children'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-children'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-children'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+      {% if data ['spot-abuse']%}
+      <h3 class="govuk-heading-m">Verbal abuse</h3>
+        <p><strong>Example</strong>: {{data['spot-abuse']}}</p>
+      {% if data['risk-abuse'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-abuse']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-abuse'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-abuse'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-abuse'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-abuse'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-abuse'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-abuse">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-abuse" name="priority-abuse">
+                <option value="0" {% if data ['priority-abuse'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-abuse'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-abuse'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-abuse'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-l">Societal harm</h2>
+
+      {% if data ['spot-group']%}
+      <h3 class="govuk-heading-m">Exclusion of a group of people</h3>
+      <p><strong>Example</strong>: {{data['spot-group']}}</p>
+      {% if data['risk-group'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-group']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-group'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-group'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-group'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-group'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-group'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-group">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-group" name="priority-group">
+                <option value="0" {% if data ['priority-group'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-group'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-group'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-group'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+    
+       {% if data ['spot-environment']%}
+      <h3 class="govuk-heading-m">Harm to the environment</h3>
+              <p><strong>Example</strong>: {{data['spot-environment']}}</p>
+      {% if data['risk-environment'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-environment']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-environment'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-environment'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-environment'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-environment'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-environment'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-environment">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-environment" name="priority-environment">
+                <option value="0" {% if data ['priority-environment'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-environment'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-environment'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-environment'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+       {% if data ['spot-representation']%}
+      <h3 class="govuk-heading-m">Over or under-representation</h3>
+              <p><strong>Example</strong>: {{data['spot-representation']}}</p>
+      {% if data['risk-representation'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-representation']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-representation'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-representation'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-representation'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-representation'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-representation'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-representation">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-representation" name="priority-representation">
+                <option value="0" {% if data ['priority-representation'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-representation'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-representation'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-representation'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+       {% if data ['spot-polarisation']%}
+      <h3 class="govuk-heading-m">Political polarisation</h3>
+              <p><strong>Example</strong>: {{data['spot-polarisation']}}</p>
+      {% if data['risk-polarisation'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-polarisation']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-polarisation'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-polarisation'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-polarisation'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-polarisation'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-polarisation'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-polarisation">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-polarisation" name="priority-polarisation">
+                <option value="0" {% if data ['priority-polarisation'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-polarisation'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-polarisation'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-polarisation'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+       {% if data ['spot-stereotype']%}
+      <h3 class="govuk-heading-m">Reinforcing stereotypes</h3>
+              <p><strong>Example</strong>: {{data['spot-stereotype']}}</p>
+      {% if data['risk-stereotype'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-stereotype']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-stereotype'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-stereotype'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-stereotype'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-stereotype'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-stereotype'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-stereotype">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-stereotype" name="priority-stereotype">
+                <option value="0" {% if data ['priority-stereotype'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-stereotype'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-stereotype'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-stereotype'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+       {% if data ['spot-opportunity']%}
+      <h3 class="govuk-heading-m">Unequal opportunity</h3>
+              <p><strong>Example</strong>: {{data['spot-opportunity']}}</p>
+      {% if data['risk-opportunity'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-opportunity']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-opportunity'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-opportunity'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-opportunity'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-opportunity'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-opportunity'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-opportunity">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-opportunity" name="priority-opportunity">
+                <option value="0" {% if data ['priority-opportunity'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-opportunity'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-opportunity'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-opportunity'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+       {% if data ['spot-quality']%}
+      <h3 class="govuk-heading-m">Unequal quality of service</h3>
+              <p><strong>Example</strong>: {{data['spot-quality']}}</p>
+      {% if data['risk-quality'] in ["1", "2", "3", "4", "5"] %}
+        <p><strong>Risk of effect</strong>: {{data['risk-quality']}}</p>
+        <p><strong>Next steps</strong>: 
+            {% if data['risk-quality'] === "5" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-quality'] in ["3", "4"] %}Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.{% endif%}
+            {% if data['risk-quality'] === "2" %}Conduct a brainstorm to address this.{% endif%}
+            {% if data['risk-quality'] === "1" %}No further steps at this time.{% endif%}
+        </p>
+            {% if data['risk-quality'] in ["2", "3", "4", "5"] %}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="priority-quality">
+                Give a priority
+                </label>
+                <select class="govuk-select" id="priority-quality" name="priority-quality">
+                <option value="0" {% if data ['priority-quality'] === '0' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['priority-quality'] === '1' %} selected="true" {% endif %}>1: Low</option>
+                <option value="2" {% if data ['priority-quality'] === '2' %} selected="true" {% endif %}>2: Medium</option>
+                <option value="3" {% if data ['priority-quality'] === '3' %} selected="true" {% endif %}>3: High</option>
+                </select>
+            </div>
+            {% endif %}
+        {% else %}
+        <p>You didn't rate the risk of effect, so we can't provide the next steps.</p>
+        {% endif%}
+      {% endif %}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Finish"
+      }) }}
+    </form>
+    </div>
+  </div> 
+{% endblock %}

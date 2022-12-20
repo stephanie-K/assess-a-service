@@ -1,0 +1,167 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 5 - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">5. Make sure everyone can use the service</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/make-sure-everyone-can-use-the-service/" target="_blank" rel="noopener">See point 2 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Provide a service that everyone can use. This includes disabled people and people who don’t have access to the internet or lack the skills or confidence to use it.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Government services must work for everyone who needs to use them.</p>
+          <p>People have a legal right to services and payments from public sector organisations. This means government has a duty to consider everyone’s needs when designing and delivering services.</p>          
+          <p>Inclusive services mean thinking about how users might access and use your service before you design or build anything. You should:</p>          
+          <ul class="govuk-list govuk-list--bullet">
+            <li>include disabled people in user research</li>
+            <li>understand people’s skills, connectivity and confidence in using digital technologies</li>
+            <li>consider what support might be required to help people use your service</li>
+          </ul>
+          <p>Inclusive design is about making sure your service can be used by as many people as possible.</p>          
+          <p>Accessibility is about making sure your service is usable by disabled people. Accessibility applies to all parts of the service. You should consider how you will provide letters in alternative formats, while making sure online forms are accessible to those using assistive technology like screen readers.</p>          
+          <p>Creating accessible services will also benefit other users. For example, using simple words helps people who have a learning disability, but also helps people who are tired.</p>        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Understand how users need to access your service</h3>
+        <p>Your user research should provide a comprehensive understanding of the needs of people who will use your service.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point5-understand">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point5-understand" name="sg-point5-understand">
+            <option value="default" {% if data ['sg-point5-understand'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point5-understand'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point5-understand'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point5-understand'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point5-understand'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Show that all parts of the service are inclusive</h3>
+        <p>Inclusive design should cover physical space, face to face, telephone, letters and online applications.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point5-inclusive">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point5-inclusive" name="sg-point5-inclusive">
+          <option value="default" {% if data ['sg-point5-inclusive'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point5-inclusive'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point5-inclusive'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point5-inclusive'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point5-inclusive'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Include diverse perspectives</h3>
+      <p>Engage with as broad a range of people as possible with different situational needs.</p>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sg-point5-diverse">
+        Are you doing it?
+        </label>
+        <select class="govuk-select" id="sg-point5-diverse" name="sg-point5-diverse">
+        <option value="default" {% if data ['sg-point5-diverse'] === 'default' %} selected="true" {% endif %}>Select</option>
+        <option value="1" {% if data ['sg-point5-diverse'] === '1' %} selected="true" {% endif %}>Aye</option>
+        <option value="2" {% if data ['sg-point5-diverse'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+        <option value="3" {% if data ['sg-point5-diverse'] === '3' %} selected="true" {% endif %}>Not yet</option>
+        <option value="0" {% if data ['sg-point5-diverse'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+        </select>
+    </div>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Make sure disabled people can take part in user research</h3>
+    <p>User engagement should be accessible</p>
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-weight-bold" for="sg-point5-ur">
+      Are you doing it?
+      </label>
+      <select class="govuk-select" id="sg-point5-ur" name="sg-point5-ur">
+      <option value="default" {% if data ['sg-point5-ur'] === 'default' %} selected="true" {% endif %}>Select</option>
+      <option value="1" {% if data ['sg-point5-ur'] === '1' %} selected="true" {% endif %}>Aye</option>
+      <option value="2" {% if data ['sg-point5-ur'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+      <option value="3" {% if data ['sg-point5-ur'] === '3' %} selected="true" {% endif %}>Not yet</option>
+      <option value="0" {% if data ['sg-point5-ur'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+      </select>
+  </div>
+
+  <h3 class="govuk-heading-m govuk-!-margin-top-9">Use simple language</h3>
+  <p>Make sure the information to support your service is designed to meet the minimum reading age.</p>
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-!-font-weight-bold" for="sg-point5-simple">
+    Are you doing it?
+    </label>
+    <select class="govuk-select" id="sg-point5-simple" name="sg-point5-simple">
+    <option value="default" {% if data ['sg-point5-simple'] === 'default' %} selected="true" {% endif %}>Select</option>
+    <option value="1" {% if data ['sg-point5-simple'] === '1' %} selected="true" {% endif %}>Aye</option>
+    <option value="2" {% if data ['sg-point5-simple'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+    <option value="3" {% if data ['sg-point5-simple'] === '3' %} selected="true" {% endif %}>Not yet</option>
+    <option value="0" {% if data ['sg-point5-simple'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+    </select>
+</div>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-9">Have a budget for accessibility</h3>
+<p>This includes accessibility testing or where you are required to provide access to the service in a different way.</p>
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="sg-point5-budget">
+  Are you doing it?
+  </label>
+  <select class="govuk-select" id="sg-point5-budget" name="sg-point5-budget">
+  <option value="default" {% if data ['sg-point5-budget'] === 'default' %} selected="true" {% endif %}>Select</option>
+  <option value="1" {% if data ['sg-point5-budget'] === '1' %} selected="true" {% endif %}>Aye</option>
+  <option value="2" {% if data ['sg-point5-budget'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+  <option value="3" {% if data ['sg-point5-budget'] === '3' %} selected="true" {% endif %}>Not yet</option>
+  <option value="0" {% if data ['sg-point5-budget'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+  </select>
+</div>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-9">Set a measurable target for accessibility</h3>
+<p>Establish what you need to measure and set targets for meeting accessibility requirements.</p>
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="sg-point5-target">
+  Are you doing it?
+  </label>
+  <select class="govuk-select" id="sg-point5-target" name="sg-point5-target">
+  <option value="default" {% if data ['sg-point5-target'] === 'default' %} selected="true" {% endif %}>Select</option>
+  <option value="1" {% if data ['sg-point5-target'] === '1' %} selected="true" {% endif %}>Aye</option>
+  <option value="2" {% if data ['sg-point5-target'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+  <option value="3" {% if data ['sg-point5-target'] === '3' %} selected="true" {% endif %}>Not yet</option>
+  <option value="0" {% if data ['sg-point5-target'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+  </select>
+</div>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-9">Do accessibility testing with real users</h3>
+<p>Making sure this is done in an environment they are comfortable with.</p>
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="sg-point5-real">
+  Are you doing it?
+  </label>
+  <select class="govuk-select" id="sg-point5-real" name="sg-point5-real">
+  <option value="default" {% if data ['sg-point5-real'] === 'default' %} selected="true" {% endif %}>Select</option>
+  <option value="1" {% if data ['sg-point5-real'] === '1' %} selected="true" {% endif %}>Aye</option>
+  <option value="2" {% if data ['sg-point5-real'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+  <option value="3" {% if data ['sg-point5-real'] === '3' %} selected="true" {% endif %}>Not yet</option>
+  <option value="0" {% if data ['sg-point5-real'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+  </select>
+</div>
+  
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 6"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

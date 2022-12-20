@@ -1,0 +1,101 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 7  - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">7. Iterate and improve frequently</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/iterate-and-improve/" target="_blank" rel="noopener">See point 7 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Create and improve the service using iterative, user-centred methods.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Because you’re not specifying everything up front before you’ve developed an understanding of what users need, agile methods reduce the risk of delivering the wrong thing.</p>
+          <p>Services are never ‘finished’ and making improvements to the service is more than basic maintenance.</p>          
+          <p>Continuous improvement means you can respond to changes in user needs, technology or government policy throughout the lifetime of the service. So rather than having to be replaced, the service stays relevant until it’s ready to be retired.</p>          
+          <p>Running a live service doesn’t have to mean a full team working on the service 100% of the time during the live phase. But it does mean being able to make substantial improvements throughout the lifetime of the service.</p>        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Get your service in front of real users as soon as possible</h3>
+        <p>Observe and collect data on how they use it, iterating the service based on what you’ve learned.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point7-real">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point7-real" name="sg-point7-real">
+            <option value="default" {% if data ['sg-point7-real'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point7-real'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point7-real'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point7-real'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point7-real'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Plan for continuous improvement</h3>
+        <p>Make sure you have the capacity, resources and technical flexibility to iterate and improve the service, both in delivery and when you go live.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point7-continuous">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point7-continuous" name="sg-point7-continuous">
+          <option value="default" {% if data ['sg-point7-continuous'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point7-continuous'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point7-continuous'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point7-continuous'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point7-continuous'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Prioritise improvements</h3>
+        <p>Work with your organisation to focus on improvements that have the most value</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point7-priority">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point7-priority" name="sg-point7-priority">
+          <option value="default" {% if data ['sg-point7-priority'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point7-priority'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point7-priority'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point7-priority'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point7-priority'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Build using continuous delivery techniques</h3>
+        <p>Use technologies and tools like a delivery pipeline and automated testing that allow you to change and release your service frequently.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point7-delivery">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point7-delivery" name="sg-point7-delivery">
+          <option value="default" {% if data ['sg-point7-delivery'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point7-delivery'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point7-delivery'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point7-delivery'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point7-delivery'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+        
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 8"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

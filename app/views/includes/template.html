@@ -1,0 +1,126 @@
+      
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="risk-">
+                  Risk of effect
+                </label>
+                <select class="govuk-select" id="risk-" name="risk-">
+                  <option value="0" {% if data ['risk-'] === '0' %} selected="true" {% endif %}>Select</option>
+                  <option value="1" {% if data ['risk-'] === '1' %} selected="true" {% endif %}>1: Highly improbable</option>
+                  <option value="2" {% if data ['risk-'] === '2' %} selected="true" {% endif %}>2: Improbable</option>
+                  <option value="3" {% if data ['risk-'] === '3' %} selected="true" {% endif %}>3: Possible</option>
+                  <option value="4" {% if data ['risk-'] === '4' %} selected="true" {% endif %}>4: Probable</option>
+                  <option value="5" {% if data ['risk-'] === '5' %} selected="true" {% endif %}>5: Highly probable</option>
+                </select>
+              </div>
+  
+      
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    See the scale for risk of effect
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  {% include "../includes/risk-of-effect-scale.html"  %}
+                </div>
+              </details>
+      
+
+<!--
+          <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-">
+                Are you doing it?
+                </label>
+                <select class="govuk-select" id="sg-point1-" name="sg-point1-">
+                <option value="default" {% if data ['sg-point1-'] === 'default' %} selected="true" {% endif %}>Select</option>
+                <option value="1" {% if data ['sg-point1-'] === '1' %} selected="true" {% endif %}>Yes</option>
+                <option value="2" {% if data ['sg-point1-'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+                <option value="3" {% if data ['sg-point1-'] === '3' %} selected="true" {% endif %}>Not yet</option>
+                <option value="0" {% if data ['sg-point1-'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+                </select>
+            </div>
+
+
+
+            {% if data['sg-point1-'] in ["1", "2", "3"] %}
+            <p>:
+              {% if data['sg-point1-'] === "1" %}<span class="ready-tag">Doing it</span>{% endif%}
+              {% if data['sg-point1-'] === "2" %}<span class="started-tag">Need to improve</span>{% endif%}
+              {% if data['sg-point1-'] === "3" %}<span class="todo-tag">Not doing it yet</span>{% endif%}
+            </p>
+            {% endif%}
+
+          -->
+
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point  - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">2. </h1>
+      <p><strong><a href="" target="_blank" rel="noopener">See point 2 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p></p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+        
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m"></h3>
+        <p></p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point-">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point-" name="sg-point-">
+            <option value="default" {% if data ['sg-point-'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point-'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point-'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point-'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point-'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9"></h3>
+        <p></p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point-">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point-" name="sg-point-">
+          <option value="default" {% if data ['sg-point-'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point-'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point-'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point-'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point-'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+
+  
+    
+        
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point "
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

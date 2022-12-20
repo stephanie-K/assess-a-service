@@ -1,0 +1,44 @@
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Next steps - Ethics assessment by Spotify - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">Ethics assessment - Next steps</h1>
+
+    <div class="govuk-inset-text explanation ">
+      <p>On the next page, you will see a summary of your answers showing only the effects relevant to you.</p>
+      <p>Using the guide below, think of your next steps depending on the score you gave for 'Risk of effect'.</p>
+      <p>You will be able to decide of a priority for each: 1: Low, 2: Medium, 3: High</p>
+    </div>
+
+    <h2 class="govuk-heading-m">5: Highly probable</h2>
+    <p>Conduct a brainstorm to address the specific harm with your team.</p>
+    <p>For example, you could hold a session around the prompt: “How might we help keep peoples’ private interests private?”</p>
+    <h2 class="govuk-heading-m">4: Probable or  3: Possible</h2>
+    <p>Validate your concerns with additional research or testing to understand how big a problem the harm might be, and for whom.</p>
+    <h2 class="govuk-heading-m">2: Improbable</h2>
+    <p>Although the harm is improbable, remember that edge cases can still affect a specific population.</p>
+    <p> Ask questions like: “Could this negatively impact a specific group? How might this play out in the long term if it goes unaddressed? What’s the best and worst headline we can imagine about this -- and do we feel comfortable with rolling it out as is?”</p>
+    <h2 class="govuk-heading-m">1: Highly improbable</h2>
+    <p class="govuk-!-margin-bottom-9 ">No further steps at this time</p>
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "See the summary",
+        href: "spotify-summary"
+      }) }}
+    </div>
+  </div> 
+{% endblock %}

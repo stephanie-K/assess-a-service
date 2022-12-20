@@ -1,0 +1,131 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 9 - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">9. Define what success looks like and publish performance data</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/define-what-success-looks-like/" target="_blank" rel="noopener">See point 9 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Identify how your service contributes to Scotland’s national outcomes, how you’ll measure and improve your service over time, and how you’ll share information for the benefit of future services.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Scotland has a national performance framework to help set priorities and understand how government spends public money.</p>
+          <p>This framework measures Scotland’s progress against a set of national outcomes (aligned with the United Nations Sustainable Development Goals) to help track progress in reducing inequality.</p>          
+          <p>It’s important that services contribute to these outcomes - and that we can report progress against the national indicators.</p>          
+          <p>When measuring the performance of a service, defining what good looks like and identifying appropriate metrics means that you’ll know whether the service is solving the problem it’s meant to solve.</p>          
+          <p>Collecting the right performance data means you’ll be alerted to potential problems with your service. And when you make a change to the service, you’ll be able to tell whether it had the effect you expected.</p>          
+          <p>Publishing performance data means that you’re being transparent about the success of services funded by public money.</p>        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Map to the national outcomes in Scotland’s National Performance Framework</h3>
+        <p>Describe which national indicators your service contributes to.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point9-map">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point9-map" name="sg-point9-map">
+            <option value="default" {% if data ['sg-point9-map'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point9-map'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point9-map'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point9-map'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point9-map'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Understand what success looks like for your service</h3>
+        <p>Identify metrics which will tell you what’s working and what can be improved.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point9-success">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point9-success" name="sg-point9-success">
+          <option value="default" {% if data ['sg-point9-success'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point9-success'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point9-success'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point9-success'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point9-success'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Use a wide range of data to make improvements</h3>
+        <p>Collect and use performance data from different sources, both online and offline.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point9-data">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point9-data" name="sg-point9-data">
+          <option value="default" {% if data ['sg-point9-data'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point9-data'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point9-data'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point9-data'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point9-data'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Continually review the performance of the service</h3>
+        <p>Use data to make decisions about how to fix problems and improve the service.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point9-review">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point9-review" name="sg-point9-review">
+          <option value="default" {% if data ['sg-point9-review'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point9-review'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point9-review'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point9-review'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point9-review'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Improve your management information over time</h3>
+        <p>Review and improve your metrics and data collection practices as you learn more about user needs.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point9-info">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point9-info" name="sg-point9-info">
+          <option value="default" {% if data ['sg-point9-info'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point9-info'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point9-info'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point9-info'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point9-info'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+        </div>        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Publish data to help inform and improve future government services</h3>
+        <p>Publishing information about your service will help government be open, accountable and make evidence-based decisions on future services.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point9-publish">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point9-publish" name="sg-point9-publish">
+          <option value="default" {% if data ['sg-point9-publish'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point9-publish'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point9-publish'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point9-publish'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point9-publish'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+        </div>      
+        
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 10"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,22 +1,61 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/layout_aas.html" %}
 
 {% block pageTitle %}
-Home – {{serviceName}} – GOV.UK Prototype Kit
+  Home - Assess a service
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Home
+      </h1>
+     
+      <h2 class="govuk-heading-l">What is a service?</h2>
+      <p>"A service is something that helps someone to do something" - Lou Downe</p>
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+      <h2 class="govuk-heading-l">Choose an assessment framework</h2>
+      <!--ul class="govuk-list govuk-list--bullet">
+        <li><a href="/govuk/govuk-start">GOVUK Service standard</a> <strong class="govuk-tag govuk-tag--red">To do</strong></li>
+        <li><a href="/gov-scot/gov-scot-start">Scottish Government Service standard</a> <strong class="govuk-tag govuk-tag--yellow">Started</strong></li>
+        <li><a href="/good-service-scale/scale-start">Good service scale</a> from Lou Downe <strong class="govuk-tag govuk-tag--red">To do</strong></li>
+        <li><a href="/spotify/spotify-start">Ethics assessment</a> from Spotify.Design <strong class="govuk-tag govuk-tag--green">Ready</strong></li>
+      </ul-->
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col"> Framework </th>
+            <th class="govuk-table__header" scope="col"> Status </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/gov-scot/gov-scot-start">Scottish Government Service standard</a></td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Ready</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/govuk/govuk-start">GOVUK Service standard</a></td> 
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">To do</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/good-service-scale/scale-start">Good service scale</a> from Lou Downe </td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">To do</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/spotify/spotify-start">Ethics assessment</a> from Spotify.Design </td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Ready</strong></td>
+          </tr>
+        </tbody>
+      </table>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+
+      <h2 class="govuk-heading-l">Other resources to assess your service</h2>
+      <p>Universal Score <a href="https://www.idean.com/spotlight/the-universal-score-how-to-push-inclusive-ideas-through-the-product-funnel" target="_blank" rel="noopener">Inclusive evaluation tool by IDEAN - opens in a new tab</a></p>
+
+      
+    </div>
   </div>
-</div>
 
 {% endblock %}

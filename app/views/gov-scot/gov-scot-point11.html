@@ -1,0 +1,100 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 11 - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">11. Make new source code open</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/open-source/" target="_blank" rel="noopener">See point 11 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Make all new source code open and reusable, and publish it under appropriate licences. Or if this isn’t possible, provide a convincing explanation of why this can’t be done for specific subsets of the source code.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Public services are built with public money. So unless there’s a good reason not to, the code they’re based should be made available for people to reuse and build on.</p>
+          <p>Open source code can be reused by developers working in government, avoiding duplication of work and reducing costs for government as a whole. Publishing source code under an open licence means that you’re less likely to get locked in to working with a single supplier.</p>          
+          <p>Regardless of your technology choice - reuse, buy or build - you should be able to open source your code.</p>        
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Write code in the open from the start</h3>
+        <p>Publish this in an open repository - minus any sensitive information, like secret keys and credentials.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point11-open">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point11-open" name="sg-point11-open">
+            <option value="default" {% if data ['sg-point11-open'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point11-open'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point11-open'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point11-open'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point11-open'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Understand when you should not publish code</h3>
+        <p>Identify and describe where code is too sensitive to publish.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point11-not">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point11-not" name="sg-point11-not">
+          <option value="default" {% if data ['sg-point11-not'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point11-not'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point11-not'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point11-not'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point11-not'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Describe how you’ll do open source</h3>
+        <p>Have a clear process for the lifecycle of the service, for example how you’ll manage pull requests and fork code.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point11-how">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point11-how" name="sg-point11-how">
+          <option value="default" {% if data ['sg-point11-how'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point11-how'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point11-how'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point11-how'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point11-how'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Make source code you’ve created available for reuse</h3>
+        <p>Keep ownership of the intellectual property of new source code that’s created as part of the service, and make it available for reuse under an open licence.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point11-available">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point11-available" name="sg-point11-available">
+          <option value="default" {% if data ['sg-point11-available'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point11-available'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point11-available'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point11-available'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point11-available'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+        </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 12"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

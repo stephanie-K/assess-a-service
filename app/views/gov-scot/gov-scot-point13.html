@@ -1,0 +1,130 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 13 - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">13. Operate a reliable service</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/operate-a-reliable-service/" target="_blank" rel="noopener">See point 13 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Minimise service downtime and have a plan to deal with it when it does happen.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Users expect to be able to use online services 24 hours a day, 365 days a year.</p>
+          <p>Many users have limited choice over how and when they access government services. For example, they may be a carer who only has time to apply for benefits in the early hours of the morning.</p>          
+          <p>If a service is unavailable or slow, it can mean those users aren’t able to get the help they need.</p>        
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Define non-functional requirements</h3>
+        <p>Establish when the service needs to be available, how many people are expected to use it at busy times and what impact any down-time might have.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point13-nfr">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point13-nfr" name="sg-point13-nfr">
+            <option value="default" {% if data ['sg-point13-nfr'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point13-nfr'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point13-nfr'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point13-nfr'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point13-nfr'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Carry out quality assurance testing regularly</h3>
+          <p>Establish system quality attributes for features and non-functional requirements and have a plan in place to deal with issues.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point13-qa">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point13-qa" name="sg-point13-qa">
+            <option value="default" {% if data ['sg-point13-qa'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point13-qa'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point13-qa'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point13-qa'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point13-qa'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Test the service</h3>
+          <p>Test the service in an environment that’s as similar to live as possible.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point13-test">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point13-test" name="sg-point13-test">
+            <option value="default" {% if data ['sg-point13-test'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point13-test'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point13-test'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point13-test'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point13-test'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Plan for major events</h3>
+          <p>Have a plan for disaster recovery in the event of a breach or major event that could disrupt service delivery.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point13-plan">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point13-plan" name="sg-point13-plan">
+            <option value="default" {% if data ['sg-point13-plan'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point13-plan'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point13-plan'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point13-plan'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point13-plan'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Maximise uptime and speed of response for the online part of the service</h3>
+          <p>Actively work towards fixing any organisational or contractual issues which make it difficult to maximise availability.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point13-speed">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point13-speed" name="sg-point13-speed">
+            <option value="default" {% if data ['sg-point13-speed'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point13-speed'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point13-speed'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point13-speed'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point13-speed'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">Deploy software changes regularly without significant downtime</h3>
+          <p>Use automated end-to-end testing to ensure the service functions as designed and to protect against introducing regression as you continually improve the service.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point13-deploy">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point13-deploy" name="sg-point13-deploy">
+            <option value="default" {% if data ['sg-point13-deploy'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point13-deploy'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point13-deploy'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point13-deploy'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point13-deploy'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+          </div>
+  
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 14"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

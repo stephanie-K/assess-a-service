@@ -1,0 +1,55 @@
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  End - Ethics assessment by Spotify - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">This is the end of the Ethics assessment</h1>
+
+        <p>You can <a href="javascript: window.history.go(-1)">go back to the previous page</a> and save it to keep a trace if needed (either copy/paste the page or select print in your browser and save as PDF).</p>
+
+        <p>I hope this was useful.</p>
+        <p>This is an experiment, you can <a href="/contact">give me some feedback</a> or look at <a href="https://github.com/stephanie-K/assess-a-service" target="_blank" rel="noopener">the code (opens a new tab)</a> if you're interested.</p>
+
+        <div class="govuk-inset-text explanation ">
+            <p>If you want to start again with a different service, you need to <a href="/manage-prototype/clear-data">clear the data first</a>.</p>
+        </div>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-9">Extra resources</h2>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-9">
+            <li>Based on the work of <a href="https://spotify.design/article/investigating-consequences-with-our-ethics-assessment" target="_blank" rel="noopener">Spotify.Design</a></li>
+            <li><a href="http://tarotcardsoftech.artefactgroup.com/" target="_blank" rel="noopener">Artefact Group’s Tarot Cards of Tech</a></li>
+            <li>More on biases with this <a href="https://www.thinkcompany.com/events/design-for-cognitive-bias/" target="_blank" rel="noopener">video from David Dylan Thomas</a>  - Design for Cognitive Bias: Using Mental Shortcuts for Good Instead of Evil</li>
+            <li><a href="https://stephaniewalter.design/blog/52-ux-cards-to-discover-cognitive-biases" target="_blank" rel="noopener">Stephanie Walter: 52 UX Cards to Discover Cognitive Biases</a></li>
+            <li><a href="https://cardsforhumanity.idean.com/" target="_blank" rel="noopener">Cards for Humanity</a> - A practical tool for inclusive design</li>
+            
+        </ul>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Back to homepage",
+        href: "/"
+      }) }}
+
+      <div class="govuk-inset-text notes ">
+          <h2 class="govuk-heading-m">Potential improvements:</h2>
+          <ul class="govuk-list govuk-list--bullet">
+              <li>link to go back and edit answers from the summary</li>
+              <li>offer a check list of the effects they think are relevant first and only present these (shorter pages)</li>
+              <li>sort next steps by priority order on a final page</li>
+
+          </ul>
+      </div>
+    </div>
+  </div> 
+{% endblock %}

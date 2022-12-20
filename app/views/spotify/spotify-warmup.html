@@ -1,0 +1,35 @@
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Warm-up - Ethics assessment by Spotify - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Ethics assessment - Warm-up</h1>
+
+      <p>Before jumping into this assessment, you might want to do a little warm up using one or more of the below questions, borrowed from <a href="http://tarotcardsoftech.artefactgroup.com/" target="_blank" rel="noopener">Artefact Group’s Tarot Cards of Tech</a>:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>How could a bad actor use this product? What is your team doing to prepare for that?</li>
+        <li>What about your product model would concern the people using it the most?</li>
+        <li>What’s the worst headline about your product you can imagine?</li>
+        <li>How might a community change if 80% of residents used your product?</li>
+      </ul>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        href: "spotify-physical"
+      }) }}
+    </div>
+  </div> 
+{% endblock %}
+

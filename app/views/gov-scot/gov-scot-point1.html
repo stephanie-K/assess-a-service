@@ -1,0 +1,163 @@
+
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 1 - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">1. Understanding users and their needs</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/understanding-users/" target="_blank" rel="noopener">See point 1 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Develop a deep understanding of users and the problem you’re trying to solve for them.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+            <p>Understanding the context of people’s lives gives you the best chance of meeting user’s needs in a simple and cost effective way.</p> 
+            <p>You can learn a lot about users from research that’s already been done and by analysing data, such as call centre logs, statistics and web analytics.</p>
+            <p>The real problem might not be the one you originally thought needed solving. Testing your assumptions early, with the people you’re trying to reach, reduces the risk of building the wrong thing.</p>
+            <p>If you continue to revisit your understanding of users at every stage of delivery, it’s more likely that your end product will be fit for purpose.</p>
+        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Understand what research has already been done</h3>
+        <p>Take time to understand what you already know about users, reflecting on any existing research.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-research-done-before">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point1-research-done-before" name="sg-point1-research-done-before">
+            <option value="default" {% if data ['sg-point1-research-done-before'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point1-research-done-before'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point1-research-done-before'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point1-research-done-before'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point1-research-done-before'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Make sure data guides your decisions</h3>
+        <p>Explore what data can help you make decisions, from open data to call centre stats and web analytics.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-data">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point1-data" name="sg-point1-data">
+            <option value="default" {% if data ['sg-point1-data'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point1-data'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point1-data'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point1-data'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point1-data'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Do research with a wide range of people</h3>
+        <p>Have a clear idea of what you’re trying to find out through user research and who you need to include.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-wide">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point1-wide" name="sg-point1-wide">
+            <option value="default" {% if data ['sg-point1-wide'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point1-wide'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point1-wide'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point1-wide'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point1-wide'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Be ethical and inclusive</h3>
+        <p>Speak to the right users, removing any barriers that might prevent them in taking part in research, and do no harm to participants.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-inclusive">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point1-inclusive" name="sg-point1-inclusive">
+            <option value="default" {% if data ['sg-point1-inclusive'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point1-inclusive'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point1-inclusive'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point1-inclusive'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point1-inclusive'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Do research legally</h3>
+        <p>Make sure you are collecting and processing data legally.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-legally">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point1-legally" name="sg-point1-legally">
+            <option value="default" {% if data ['sg-point1-legally'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point1-legally'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point1-legally'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point1-legally'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point1-legally'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Make sure what you deliver is based on evidence</h3>
+        <p>Consider how your research becomes insight.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-evidence">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point1-evidence" name="sg-point1-evidence">
+            <option value="default" {% if data ['sg-point1-evidence'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point1-evidence'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point1-evidence'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point1-evidence'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point1-evidence'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Test and learn as early as possible</h3>
+        <p>Testing with users will help you know you’re delivering the right thing, for example showing prototypes to users before developing a product.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-test">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point1-test" name="sg-point1-test">
+            <option value="default" {% if data ['sg-point1-test'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point1-test'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point1-test'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point1-test'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point1-test'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Share your insights</h3>
+        <p>Communicate research findings and insights with your team and other organisations who could use them.</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point1-share">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point1-share" name="sg-point1-share">
+            <option value="default" {% if data ['sg-point1-share'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point1-share'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point1-share'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point1-share'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point1-share'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+        
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 2"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

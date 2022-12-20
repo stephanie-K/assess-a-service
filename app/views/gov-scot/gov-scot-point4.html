@@ -1,0 +1,84 @@
+{% extends "layouts/layout_aas.html" %}
+
+{% block pageTitle %}
+  Point 4  - mygov.scot Service Standard - Assess a service
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">4. Help users succeed first time</h1>
+      <p><strong><a href="https://resources.mygov.scot/alpha/service-standard/digital-scotland-service-standard/help-users-succeed-first-time/" target="_blank" rel="noopener">See point 4 on resouces.mygov.scot (opens in a new tab)</a></strong></p>
+      <p>Build a service that’s simple and intuitive. And test it with users to make sure it works for them.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Why it’s important</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>People expect services to just work, and government services should be no exception.</p>
+          <p>It costs time and money to deal with mistakes that happen when services don’t work well. And making things more complicated than they need to be undermines trust in government.</p>          
+          <p>You’ll be more confident if you test the end-to-end service in an environment identical to that of the live version, including on all common browsers and devices, using fake accounts and a representative sample of users.</p>        </div>
+      </details>
+      <h2 class="govuk-heading-l">You should do the following</h2>
+      <form class="form" method="post">
+        <h3 class="govuk-heading-m">Usability testing</h3>
+        <p>Test frequently with real and potential users to understand if the service you’ve designed works in the way you expect</p>
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sg-point4-ut">
+            Are you doing it?
+            </label>
+            <select class="govuk-select" id="sg-point4-ut" name="sg-point4-ut">
+            <option value="default" {% if data ['sg-point4-ut'] === 'default' %} selected="true" {% endif %}>Select</option>
+            <option value="1" {% if data ['sg-point4-ut'] === '1' %} selected="true" {% endif %}>Aye</option>
+            <option value="2" {% if data ['sg-point4-ut'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+            <option value="3" {% if data ['sg-point4-ut'] === '3' %} selected="true" {% endif %}>Not yet</option>
+            <option value="0" {% if data ['sg-point4-ut'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+            </select>
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Test every part of the service</h3>
+        <p>Test how users will interact with all parts of the service, like online applications and letters</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sg-point4-test">
+          Are you doing it?
+          </label>
+          <select class="govuk-select" id="sg-point4-test" name="sg-point4-test">
+          <option value="default" {% if data ['sg-point4-test'] === 'default' %} selected="true" {% endif %}>Select</option>
+          <option value="1" {% if data ['sg-point4-test'] === '1' %} selected="true" {% endif %}>Aye</option>
+          <option value="2" {% if data ['sg-point4-test'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+          <option value="3" {% if data ['sg-point4-test'] === '3' %} selected="true" {% endif %}>Not yet</option>
+          <option value="0" {% if data ['sg-point4-test'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+          </select>
+      </div>
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Use automated testing</h3>
+      <p>Use automated end-to-end testing to ensure systems work as expected as you continually improve the service</p>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sg-point4-auto">
+        Are you doing it?
+        </label>
+        <select class="govuk-select" id="sg-point4-auto" name="sg-point4-auto">
+        <option value="default" {% if data ['sg-point4-auto'] === 'default' %} selected="true" {% endif %}>Select</option>
+        <option value="1" {% if data ['sg-point4-auto'] === '1' %} selected="true" {% endif %}>Aye</option>
+        <option value="2" {% if data ['sg-point4-auto'] === '2' %} selected="true" {% endif %}>Need to improve</option>
+        <option value="3" {% if data ['sg-point4-auto'] === '3' %} selected="true" {% endif %}>Not yet</option>
+        <option value="0" {% if data ['sg-point4-auto'] === '0' %} selected="true" {% endif %}>Not relevant to us</option>
+        </select>
+    </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Go to point 5"
+      }) }} 
+    </form>
+    </div>
+  </div>
+
+{% endblock %}
