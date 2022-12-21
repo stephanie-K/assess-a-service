@@ -8,10 +8,13 @@
 {% block head %}
     {% block stylesheets %}
     {% include "govuk-prototype-kit/includes/stylesheets.html" %}
-    <link href="/public/stylesheets/aas.css" media="all" rel="stylesheet" type="text/css" />
         {% for stylesheetUrl in extensionConfig.stylesheets %}
         <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
         {% endfor %}  
+        <link href="/public/stylesheets/aas.css" media="all" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     {% endblock %}
 {% endblock %}
 

@@ -8,7 +8,8 @@
 @import "node_modules/govuk-frontend/govuk/settings/all";
 
 // Override the default GOV.UK Frontend font stack
-$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+$govuk-font-family:  "Roboto", "Helvetica", "Arial", "sans-serif" !important;
+// was "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
 // Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
 $govuk-canvas-background-colour: $govuk-body-background-colour;
@@ -42,7 +43,6 @@ $aas-warning: #B30000;
         padding: 0.2em 0.8em;
         margin: 0.5em 0;
         font-weight: 600;
-        font-family: 'Nunito', 'Arial', sans-serif;
         @media only screen and (max-width: 395px) {
             font-size:1.5em;
         }
@@ -92,10 +92,10 @@ $aas-warning: #B30000;
 
 body p, ul, li , a, span, .govuk-link, .govuk-hint,
 .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
-.govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
+.govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s, .govuk-footer__link,
 .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
     color: $aas-text;
-    font-family: 'Nunito', 'Arial', sans-serif;
+    font-family:  "Roboto", "Helvetica", "Arial", "sans-serif";
 }
 
 .tag-green {
