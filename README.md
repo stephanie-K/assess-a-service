@@ -10,3 +10,5 @@ This is a personal project. I'm experimenting with a tool to have various option
 This is under construction
 
 I have [a blog post about it](https://blog.chezleskrus.com/2020/11/15/assess-a-service/).
+
+You can access the work in progress here: [assess-a-service.herokuapp.com](https://assess-a-service.herokuapp.com/) the password is **assess**
