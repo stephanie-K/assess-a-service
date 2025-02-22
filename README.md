@@ -7,8 +7,6 @@ This is a personal project. I'm experimenting with a tool to have various option
 - [Good service scale](https://good.services/the-good-services-scale) (by Lou Downe)
 - [Ethics assessement](https://spotify.design/article/investigating-consequences-with-our-ethics-assessment) (by spotify.Design)
 
-This is under construction
 
 I have [a blog post about it](https://blog.chezleskrus.com/2020/11/15/assess-a-service/).
 
-You can access the work in progress here: [assess-a-service.herokuapp.com](https://assess-a-service.herokuapp.com/) the password is **assess**
